@@ -36,10 +36,21 @@ export default class GameContainer extends Component {
         let updatedGameState = this.state.gameState;
 
         if (this.state.word.indexOf(event.key) > -1) {
-            updatedGameState[this.state.word.indexOf(event.key)] = event.key
+            let indices = [];
+            let index = this.state.word.indexOf(event.key);
+
+            while (index !== -1) {
+                indices.push(index);
+                index = this.state.word.indexOf(event.key,index+1);
+            }
+
+            for (let i = 0; i <= indices.length; i++) {
+                updatedGameState[indices[i]] = event.key;
+            }
+            
             this.setState({ gameState: updatedGameState })
         } else {
-            this.setState({ wrongGuesses: [...this.state.wrongGuesses, event.key] })
+            this.setState({ wrongGuesses: [...this.state.wrongGuesses, event.key] });
         }
     }
 
