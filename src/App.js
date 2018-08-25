@@ -12,11 +12,6 @@ class App extends Component {
           <h1 className="App-title">Minion /REACH/</h1>
           <p>Leaderboard Login Sign Up</p>
         </header>
-        <p className="App-intro">
-          <button type="button" class="btn btn-primary">Start Game</button>
-          <br />
-          Difficulty: <button type="button" className="btn btn-warning">Easy</button> <button type="button" class="btn btn-primary">Normal</button> <button type="button" className="btn btn-warning">Hard</button> <button type="button" className="btn btn-warning">BANANAS</button>
-        </p>
         <GameContainer />
       </div>
     );
