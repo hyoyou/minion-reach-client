@@ -49,8 +49,19 @@ export default class GameContainer extends Component {
             }
             
             this.setState({ gameState: updatedGameState })
+            
+            this.checkWin();
         } else {
-            this.setState({ wrongGuesses: [...this.state.wrongGuesses, event.key] });
+            this.setState({ 
+                wrongGuesses: [...this.state.wrongGuesses, event.key],
+                lives: this.state.lives - 1
+            });
+        }
+    }
+
+    checkWin = () => {
+        if (this.state.gameState.join('') === this.state.word) {
+            setTimeout(function() {alert('You Won!')}, 500);
         }
     }
 
