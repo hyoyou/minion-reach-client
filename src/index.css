@@ -3,3 +3,19 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.game-container {
+  float: left;
+  width: 70vw;
+  padding: 5% 10%;
+}
+
+.minions-container {
+  float: left;
+  width: 30vw;
+  padding: 5% 10%;
+}
+
+.game {
+  font-size: 3em;
+}

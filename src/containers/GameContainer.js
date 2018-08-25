@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+const APIURL = `http://app.linkedin-reach.io/words?`;
+
 export default class GameContainer extends Component {
     state = {
         word: '',
@@ -10,7 +12,12 @@ export default class GameContainer extends Component {
     }
 
     componentDidMount() {
-        // send Get request with difficulty level to get a new word
+        fetch(`${APIURL}difficulty=${this.state.difficulty}&minLength=4`)
+            .then(response => response.json())
+            .then(result => {
+            console.log(result)
+            })
+
         let secretWord = "banana";
 
         this.setState({
@@ -67,7 +74,7 @@ export default class GameContainer extends Component {
 
     render() {
         return (
-            <div className="container" tabIndex="0" onKeyDown={this.handleInput}>
+            <div className="game-container" tabIndex="0" onKeyDown={this.handleInput}>
                 <button type="button" className="btn btn-primary">Start Game</button>
                 <div className="difficulty">
                     Difficulty: 
@@ -76,12 +83,10 @@ export default class GameContainer extends Component {
                     <button type="button" className="btn btn-warning">Hard</button> 
                     <button type="button" className="btn btn-warning">BANANAS</button>
                 </div>
-                <div className="livesLeft">
+                <div className="lives-left">
                     Lives Left: {this.state.lives}
                 </div>
                 <div className="game">
-                    Game:
-
                     {this.state.gameState.length > 1 && this.state.gameState.join(' ')}
                     <br />
                     Wrong Guesses: {this.state.wrongGuesses.join(' ')}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './decorative_bananas.png';
 import './App.css';
 import GameContainer from './containers/GameContainer';
+import Minions from './containers/Minions';
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
           <p>Leaderboard Login Sign Up</p>
         </header>
         <GameContainer />
+        <Minions />
       </div>
     );
   }
