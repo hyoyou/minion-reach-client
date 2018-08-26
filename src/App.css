@@ -1,17 +1,19 @@
 .App {
   text-align: center;
+  border: 10px solid #0073b1;
 }
 
-.App-logo {
+/* .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
-}
+} */
 
 .App-header {
-  background-color: #222;
+  background-image: url(https://imgur.com/a3lwX7a.png);
+  background-repeat: round;
+  background-size: 18%;
   height: 20vh;
   padding: 20px;
-  color: white;
 }
 
 .App-title {

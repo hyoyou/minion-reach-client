@@ -1,7 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Raleway', sans-serif;
+  color: #0073b1;
 }
 
 ul {
@@ -9,25 +10,52 @@ ul {
   padding: 0;
 }
 
-.game-container {
-  float: left;
-  width: 55vw;
-  height: 77vh;
-  padding: 5% 10%;
+/* ================ Navigation ================ */
+.minion {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 5rem;
+  color: #0073b1;
+}
+
+.reach {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  letter-spacing: .2rem;
+  font-size: 5rem;
+  color: #0073b1;
 }
 
 /* ================ Game Container ================ */
-
 .game {
+  float: left;
+  width: 73.5vw;
+  height: 77vh;
+  padding: 5% 10%;
+  font-family: 'VT323', monospace;
+  font-size: 2rem;
+}
+
+.directions {
+  font-size: 1.25rem;
+}
+
+.game-board {
+  border: 10px solid grey;
+  background-color: lightgray;
+  align-content: center;
+}
+
+.game-guess {
   font-size: 1.5em;
 }
 
 .passcode {
-
+  
 }
 
 .passcode-miss{
   color: red;
+  text-decoration: underline;
 }
 
 .keyboard {
@@ -35,7 +63,6 @@ ul {
   flex-flow: row wrap;
   align-content: center;
   list-style: none;
-  max-width: 35vw;
 }
 
 .keyboard li {
@@ -45,6 +72,11 @@ ul {
 .keyboard button {
   width: 2.5rem;
   height: 3rem;
+  font-size: 2rem;
+}
+
+.btn-primary {
+  background-color: #0073b1;
 }
 
 /* ================ Minions Container ================ */
@@ -52,11 +84,12 @@ ul {
 .minions-container {
   background-image: url(./images/BananaTree.jpg);
   background-repeat: no-repeat;
-  background-size: 55% 100%;
+  background-size: 83%;
+  background-position: bottom;
   float: left;
-  width: 45vw;
+  width: 25vw;
   height: 77vh;
-  padding: 5% 10%;
+  padding: 10%;
 }
 
 .minions img {
@@ -108,5 +141,5 @@ ul {
   height: 12vh;
   position: absolute;
   bottom: 39.5vh;
-  transform: rotate(38deg)
+  /* transform: rotate(38deg) */
 }

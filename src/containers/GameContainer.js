@@ -99,7 +99,7 @@ export default class GameContainer extends Component {
 
     render() {
         return (
-            <div className="game" tabIndex="0" onKeyDown={this.handleInput}>
+            <div className="game-container" tabIndex="0" onKeyDown={this.handleInput}>
                 <Game lives={this.state.lives} gameState={this.state.gameState} wrongGuesses={this.state.wrongGuesses} checkGuess={this.checkGuess} />
                 <Minions lives={this.state.lives} />
             </div>

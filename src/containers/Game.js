@@ -9,7 +9,7 @@ export default class Game extends Component {
         let { wrongGuesses, gameState } = this.props;
 
         return (
-            <div className="game-container">
+            <div className="game">
                 {/* <button type="button" className="btn btn-primary">Start Game</button>
                 <div className="difficulty">
                     Difficulty: 
@@ -18,21 +18,24 @@ export default class Game extends Component {
                     <button type="button" className="btn btn-warning">Hard</button> 
                     <button type="button" className="btn btn-warning">BANANAS</button>
                 </div> */}
-                <div className="lives-left">
-                    Lives Left: {this.props.lives}
-                </div>
-                <div className="game">
-                    PASSCODE: 
-                    <div className={this.props.lives !== 0 ? "passcode" : "passcode-miss"}>
-                        {gameState.length > 1 && gameState.join(' ')}
+                <p className="directions">Your mission: The minions locked us out of our banana farm! It only takes 6 minions to /REACH/ the bananas. Decipher the code to stop them!</p>
+                <div className="game-board">
+                    <div className="lives-left">
+                        Lives Left: {this.props.lives}
                     </div>
-                    <br />
-                    <ul className="keyboard">
-                        {this.state.alphabet.map((letter, id) =>
-                            <li key={id}><button type="button" className={`btn btn-${wrongGuesses.includes(letter) || gameState.includes(letter) ? "secondary" : "primary"}`} onClick={(event) => this.props.checkGuess(event.target.innerText)}>{letter}</button></li>
-                        )}
-                    </ul>
-                    {/* Wrong Guesses: {wrongGuesses && wrongGuesses.join(' ')} */}
+                    <div className="game-guess">
+                        PASSCODE: 
+                        <div className={this.props.lives !== 0 ? "passcode" : "passcode-miss"}>
+                            {gameState.length > 1 && gameState.join(' ')}
+                        </div>
+                        <br />
+                        <ul className="keyboard">
+                            {this.state.alphabet.map((letter, id) =>
+                                <li key={id}><button type="button" className={`btn btn-${wrongGuesses.includes(letter) || gameState.includes(letter) ? "secondary" : "primary"}`} onClick={(event) => this.props.checkGuess(event.target.innerText)}>{letter}</button></li>
+                            )}
+                        </ul>
+                        {/* Wrong Guesses: {wrongGuesses && wrongGuesses.join(' ')} */}
+                    </div>
                 </div>
             </div>
         )
