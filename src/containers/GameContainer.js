@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const APIURL = `http://app.linkedin-reach.io/words?`;
+const APIURL = `http://localhost:3001/api/words`;
 
 export default class GameContainer extends Component {
     state = {
@@ -12,19 +12,16 @@ export default class GameContainer extends Component {
     }
 
     componentDidMount() {
-        fetch(`${APIURL}difficulty=${this.state.difficulty}&minLength=4`)
+        fetch(`${APIURL}`)
             .then(response => response.json())
             .then(result => {
-            console.log(result)
+                let secretWord = result[Math.floor(Math.random()*result.length)];
+                this.setState({
+                    word: secretWord
+                })
+
+                this.startGame(secretWord);
             })
-
-        let secretWord = "banana";
-
-        this.setState({
-            word: secretWord
-        })
-
-        this.startGame(secretWord);
     }
 
     startGame = (secretWord) => {
