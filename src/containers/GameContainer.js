@@ -38,28 +38,33 @@ export default class GameContainer extends Component {
     handleInput = (event) => {
         // console.log(event.key)
         let updatedGameState = this.state.gameState;
+        let key = event.key.toLowerCase();
 
-        if (this.state.word.indexOf(event.key) > -1) {
-            let indices = [];
-            let index = this.state.word.indexOf(event.key);
+        if (this.state.wrongGuesses.indexOf(key) < 0) {
+            if (this.state.word.indexOf(key) > -1) {
+                let indices = [];
+                let index = this.state.word.indexOf(key);
 
-            while (index !== -1) {
-                indices.push(index);
-                index = this.state.word.indexOf(event.key,index+1);
+                while (index !== -1) {
+                    indices.push(index);
+                    index = this.state.word.indexOf(key,index+1);
+                }
+
+                for (let i = 0; i <= indices.length; i++) {
+                    updatedGameState[indices[i]] = key;
+                }
+                
+                this.setState({ gameState: updatedGameState })
+                
+                this.checkWin();
+            } else if (this.state.lives >= 1 ) {
+                this.setState({ 
+                    wrongGuesses: [...this.state.wrongGuesses, key],
+                    lives: this.state.lives - 1
+                });
+            } else {
+                this.gameOver();
             }
-
-            for (let i = 0; i <= indices.length; i++) {
-                updatedGameState[indices[i]] = event.key;
-            }
-            
-            this.setState({ gameState: updatedGameState })
-            
-            this.checkWin();
-        } else {
-            this.setState({ 
-                wrongGuesses: [...this.state.wrongGuesses, event.key],
-                lives: this.state.lives - 1
-            });
         }
     }
 
@@ -69,17 +74,27 @@ export default class GameContainer extends Component {
         }
     }
 
+    gameOver = () => {
+        alert('The minions got all the bananas')
+        this.setState({
+            word: '',
+            gameState: [],
+            wrongGuesses: [],
+            lives: 6
+        })
+    }
+
     render() {
         return (
             <div className="game-container" tabIndex="0" onKeyDown={this.handleInput}>
-                <button type="button" className="btn btn-primary">Start Game</button>
+                {/* <button type="button" className="btn btn-primary">Start Game</button>
                 <div className="difficulty">
                     Difficulty: 
                     <button type="button" className="btn btn-warning">Easy</button> 
                     <button type="button" className="btn btn-primary">Normal</button> 
                     <button type="button" className="btn btn-warning">Hard</button> 
                     <button type="button" className="btn btn-warning">BANANAS</button>
-                </div>
+                </div> */}
                 <div className="lives-left">
                     Lives Left: {this.state.lives}
                 </div>
