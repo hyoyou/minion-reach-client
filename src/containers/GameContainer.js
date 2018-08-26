@@ -40,8 +40,11 @@ export default class GameContainer extends Component {
 
     handleInput = (event) => {
         // console.log(event.key)
-        let key = event.key.toLowerCase();
-        this.checkGuess(key);
+        // debugger
+        if (event.keyCode >= 65 && event.keyCode <= 90) {
+            let key = event.key.toLowerCase();
+            this.checkGuess(key);
+        } 
     }
     
     checkGuess = (key) => {
