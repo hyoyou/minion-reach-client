@@ -11,6 +11,14 @@ body {
   padding: 5% 10%;
 }
 
+/* ================ Game Container ================ */
+
+.game {
+  font-size: 1.5em;
+}
+
+/* ================ Minions Container ================ */
+
 .minions-container {
   background-image: url(./images/BananaTree.jpg);
   background-repeat: no-repeat;
@@ -21,6 +29,50 @@ body {
   padding: 5% 10%;
 }
 
-.game {
-  font-size: 1.5em;
+.minions img {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+}
+
+.minion1 {
+  width: 5vw;
+  height: 7vh;
+  position: absolute;
+  bottom: 2vh;
+}
+
+.minion2 {
+  width: 4.25vw;
+  height: 7.5vh;
+  position: absolute;
+  bottom: 8.7vh;
+}
+
+.minion3 {
+  width: 5.2vw;
+  height: 7.5vh;
+  position: absolute;
+  bottom: 15.5vh;
+}
+
+.minion4 {
+  width: 4.5vw;
+  height: 8vh;
+  position: absolute;
+  bottom: 22.5vh;
+}
+
+.minion5 {
+  width: 6.5vw;
+  height: 9.5vh;
+  position: absolute;
+  bottom: 29.5vh;
+}
+
+.minion6 {
+  width: 6.5vw;
+  height: 12vh;
+  position: absolute;
+  bottom: 37.5vh;
 }
