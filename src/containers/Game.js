@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export default class Game extends Component {
     state = {
-        alphabet: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+        alphabet: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     }
 
     render() {
@@ -32,7 +32,7 @@ export default class Game extends Component {
                             <li key={id}><button type="button" className={`btn btn-${wrongGuesses.includes(letter) || gameState.includes(letter) ? "secondary" : "primary"}`} onClick={(event) => this.props.checkGuess(event.target.innerText)}>{letter}</button></li>
                         )}
                     </ul>
-                    Wrong Guesses: {wrongGuesses && wrongGuesses.join(' ')}
+                    {/* Wrong Guesses: {wrongGuesses && wrongGuesses.join(' ')} */}
                 </div>
             </div>
         )

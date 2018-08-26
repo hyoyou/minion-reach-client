@@ -20,7 +20,7 @@ export default class GameContainer extends Component {
             .then(result => {
                 let secretWord = result[Math.floor(Math.random()*result.length)];
                 this.setState({
-                    word: secretWord
+                    word: secretWord.toUpperCase()
                 })
 
                 this.startGame(secretWord);
@@ -42,7 +42,7 @@ export default class GameContainer extends Component {
         // console.log(event.key)
         // debugger
         if (event.keyCode >= 65 && event.keyCode <= 90) {
-            let key = event.key.toLowerCase();
+            let key = event.key.toUpperCase();
             this.checkGuess(key);
         } 
     }
