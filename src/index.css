@@ -6,16 +6,21 @@ body {
 
 .game-container {
   float: left;
-  width: 70vw;
+  width: 55vw;
+  height: 77vh;
   padding: 5% 10%;
 }
 
 .minions-container {
+  background-image: url(./images/BananaTree.jpg);
+  background-repeat: no-repeat;
+  background-size: 55% 100%;
   float: left;
-  width: 30vw;
+  width: 45vw;
+  height: 77vh;
   padding: 5% 10%;
 }
 
 .game {
-  font-size: 3em;
+  font-size: 1.5em;
 }

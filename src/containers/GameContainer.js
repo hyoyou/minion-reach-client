@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Game from './Game';
+import Minions from './Minions';
 
 const APIURL = `http://localhost:3001/api/words`;
 
@@ -86,23 +88,9 @@ export default class GameContainer extends Component {
 
     render() {
         return (
-            <div className="game-container" tabIndex="0" onKeyDown={this.handleInput}>
-                {/* <button type="button" className="btn btn-primary">Start Game</button>
-                <div className="difficulty">
-                    Difficulty: 
-                    <button type="button" className="btn btn-warning">Easy</button> 
-                    <button type="button" className="btn btn-primary">Normal</button> 
-                    <button type="button" className="btn btn-warning">Hard</button> 
-                    <button type="button" className="btn btn-warning">BANANAS</button>
-                </div> */}
-                <div className="lives-left">
-                    Lives Left: {this.state.lives}
-                </div>
-                <div className="game">
-                    {this.state.gameState.length > 1 && this.state.gameState.join(' ')}
-                    <br />
-                    Wrong Guesses: {this.state.wrongGuesses.join(' ')}
-                </div>
+            <div className="game" tabIndex="0" onKeyDown={this.handleInput}>
+                <Game lives={this.state.lives} gameState={this.state.gameState} wrongGuesses={this.state.wrongGuesses} />
+                <Minions wrongGuesses={this.state.wrongGuesses} />
             </div>
         )
     }
