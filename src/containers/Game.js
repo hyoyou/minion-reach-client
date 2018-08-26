@@ -6,6 +6,8 @@ export default class Game extends Component {
     }
 
     render() {
+        let { wrongGuesses, gameState } = this.props;
+
         return (
             <div className="game-container">
                 {/* <button type="button" className="btn btn-primary">Start Game</button>
@@ -22,15 +24,15 @@ export default class Game extends Component {
                 <div className="game">
                     PASSCODE: 
                     <div className={this.props.lives !== 0 ? "passcode" : "passcode-miss"}>
-                        {this.props.gameState.length > 1 && this.props.gameState.join(' ')}
+                        {gameState.length > 1 && gameState.join(' ')}
                     </div>
                     <br />
                     <ul className="keyboard">
-                        {this.state.alphabet.map((letter, id) => 
-                            <li key={id}><button type="button" className="btn btn-primary" onClick={(event) => this.props.checkGuess(event.target.innerText)}>{letter}</button></li>
+                        {this.state.alphabet.map((letter, id) =>
+                            <li key={id}><button type="button" className={`btn btn-${wrongGuesses.includes(letter) || gameState.includes(letter) ? "secondary" : "primary"}`} onClick={(event) => this.props.checkGuess(event.target.innerText)}>{letter}</button></li>
                         )}
                     </ul>
-                    Wrong Guesses: {this.props.wrongGuesses && this.props.wrongGuesses.join(' ')}
+                    Wrong Guesses: {wrongGuesses && wrongGuesses.join(' ')}
                 </div>
             </div>
         )
