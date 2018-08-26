@@ -77,13 +77,13 @@ export default class GameContainer extends Component {
     }
 
     gameOver = () => {
-        alert('The minions got all the bananas')
+        let reveal = this.state.word.split('');
+        
         this.setState({
-            word: '',
-            gameState: [],
-            wrongGuesses: [],
-            lives: 6
+            gameState: reveal
         })
+        
+        setTimeout(function() {alert('The minions got all the bananas')}, 500);
     }
 
     render() {
