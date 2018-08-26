@@ -59,12 +59,13 @@ export default class GameContainer extends Component {
                 this.setState({ gameState: updatedGameState })
                 
                 this.checkWin();
-            } else if (this.state.lives >= 1 ) {
+            } else if (this.state.lives > 1 ) {
                 this.setState({ 
                     wrongGuesses: [...this.state.wrongGuesses, key],
                     lives: this.state.lives - 1
                 });
             } else {
+                this.setState({ lives: 0 })
                 this.gameOver();
             }
         }
@@ -82,7 +83,7 @@ export default class GameContainer extends Component {
         this.setState({
             gameState: reveal
         })
-        
+
         setTimeout(function() {alert('The minions got all the bananas')}, 500);
     }
 
