@@ -16,7 +16,10 @@ export default class Game extends Component {
                     Lives Left: {this.props.lives}
                 </div>
                 <div className="game">
-                    {this.props.gameState.length > 1 && this.props.gameState.join(' ')}
+                    PASSCODE: 
+                    <div className={this.props.lives !== 0 ? "passcode" : "passcode-miss"}>
+                        {this.props.gameState.length > 1 && this.props.gameState.join(' ')}
+                    </div>
                     <br />
                     Wrong Guesses: {this.props.wrongGuesses && this.props.wrongGuesses.join(' ')}
                 </div>

@@ -17,6 +17,14 @@ body {
   font-size: 1.5em;
 }
 
+.passcode {
+
+}
+
+.passcode-miss{
+  color: red;
+}
+
 /* ================ Minions Container ================ */
 
 .minions-container {
