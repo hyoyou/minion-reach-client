@@ -29,7 +29,7 @@ ul {
 .game {
   float: left;
   width: 73.5vw;
-  height: 77vh;
+  height: 75vh;
   padding: 5% 10%;
   font-family: 'VT323', monospace;
   font-size: 2rem;
@@ -88,7 +88,7 @@ ul {
   background-position: bottom;
   float: left;
   width: 25vw;
-  height: 77vh;
+  height: 75vh;
   padding: 10%;
 }
 
