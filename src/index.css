@@ -47,20 +47,23 @@ body {
   height: 7.5vh;
   position: absolute;
   bottom: 8.7vh;
+  transform: rotate(-11deg);
 }
 
 .minion3 {
   width: 5.2vw;
   height: 7.5vh;
   position: absolute;
-  bottom: 15.5vh;
+  bottom: 15.75vh;
+  transform: rotate(14deg)
 }
 
 .minion4 {
-  width: 4.5vw;
+  width: 4.75vw;
   height: 8vh;
   position: absolute;
   bottom: 22.5vh;
+  transform: rotate(-7deg)
 }
 
 .minion5 {
@@ -71,8 +74,9 @@ body {
 }
 
 .minion6 {
-  width: 6.5vw;
+  width: 6.25vw;
   height: 12vh;
   position: absolute;
   bottom: 37.5vh;
+  transform: rotate(38deg)
 }
