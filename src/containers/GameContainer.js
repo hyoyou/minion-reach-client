@@ -14,6 +14,7 @@ export default class GameContainer extends Component {
     }
 
     componentDidMount() {
+        // extract to actions
         fetch(`${APIURL}`)
             .then(response => response.json())
             .then(result => {
@@ -39,8 +40,14 @@ export default class GameContainer extends Component {
 
     handleInput = (event) => {
         // console.log(event.key)
-        let updatedGameState = this.state.gameState;
         let key = event.key.toLowerCase();
+        this.checkGuess(key);
+    }
+    
+    checkGuess = (key) => {
+        // console.log(key)
+        // debugger
+        let updatedGameState = this.state.gameState;
 
         if (this.state.wrongGuesses.indexOf(key) < 0) {
             if (this.state.word.indexOf(key) > -1) {
@@ -90,7 +97,7 @@ export default class GameContainer extends Component {
     render() {
         return (
             <div className="game" tabIndex="0" onKeyDown={this.handleInput}>
-                <Game lives={this.state.lives} gameState={this.state.gameState} wrongGuesses={this.state.wrongGuesses} />
+                <Game lives={this.state.lives} gameState={this.state.gameState} wrongGuesses={this.state.wrongGuesses} checkGuess={this.checkGuess} />
                 <Minions lives={this.state.lives} />
             </div>
         )

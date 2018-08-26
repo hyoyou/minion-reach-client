@@ -4,6 +4,11 @@ body {
   font-family: sans-serif;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 .game-container {
   float: left;
   width: 55vw;
@@ -23,6 +28,23 @@ body {
 
 .passcode-miss{
   color: red;
+}
+
+.keyboard {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  list-style: none;
+  max-width: 35vw;
+}
+
+.keyboard li {
+  padding: 1px;
+}
+
+.keyboard button {
+  width: 2.5rem;
+  height: 3.5rem;
 }
 
 /* ================ Minions Container ================ */
