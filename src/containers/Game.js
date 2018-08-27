@@ -10,14 +10,6 @@ export default class Game extends Component {
 
         return (
             <div className="game">
-                {/* <button type="button" className="btn btn-primary">Start Game</button>
-                <div className="difficulty">
-                    Difficulty: 
-                    <button type="button" className="btn btn-warning">Easy</button> 
-                    <button type="button" className="btn btn-primary">Normal</button> 
-                    <button type="button" className="btn btn-warning">Hard</button> 
-                    <button type="button" className="btn btn-warning">BANANAS</button>
-                </div> */}
                 <p className="directions">Your mission: The minions locked us out of our banana farm! It only takes 6 minions to /REACH/ the bananas. Decipher the code to stop them!</p>
                 <div className="game-board">
                     <div className="lives-left">
@@ -34,7 +26,6 @@ export default class Game extends Component {
                                 <li key={id}><button type="button" className={`btn btn-${wrongGuesses.includes(letter) || gameState.includes(letter) ? "secondary" : "primary"}`} onClick={(event) => this.props.checkGuess(event.target.innerText)}>{letter}</button></li>
                             )}
                         </ul>
-                        {/* Wrong Guesses: {wrongGuesses && wrongGuesses.join(' ')} */}
                     </div>
                 </div>
             </div>
