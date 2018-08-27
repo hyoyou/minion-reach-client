@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+
 import Game from './Game';
 import Minions from './Minions';
+import Modal from './Modal';
 
 const APIURL = `http://localhost:3001/api/words`;
 
@@ -10,7 +12,9 @@ export default class GameContainer extends Component {
         gameState: [],
         wrongGuesses: [],
         lives: 6,
-        difficulty: 3
+        difficulty: 3,
+        toggle: false,
+        win: false,
     }
 
     componentDidMount() {
@@ -83,7 +87,9 @@ export default class GameContainer extends Component {
 
     checkWin = () => {
         if (this.state.gameState.join('') === this.state.word) {
-            setTimeout(function() {alert('You Won!')}, 500);
+            // setTimeout(function() {alert('You Won!')}, 500);
+            this.setState({ win: true });
+            this.toggleModal();
         }
     }
 
@@ -94,7 +100,15 @@ export default class GameContainer extends Component {
             gameState: reveal
         })
 
-        setTimeout(function() {alert('The minions got all the bananas')}, 500);
+        this.setState({ win: false });
+        this.toggleModal();
+        // setTimeout(function() {alert('The minions got all the bananas')}, 500);
+    }
+
+    toggleModal = event => {
+        this.setState(prevState => ({
+            toggle: !prevState.toggle
+        }))
     }
 
     render() {
@@ -102,6 +116,7 @@ export default class GameContainer extends Component {
             <div className="game-container" tabIndex="0" onKeyDown={this.handleInput}>
                 <Game lives={this.state.lives} gameState={this.state.gameState} wrongGuesses={this.state.wrongGuesses} checkGuess={this.checkGuess} />
                 <Minions lives={this.state.lives} />
+                <Modal toggle={this.state.toggle} toggleModal={this.toggleModal} win={this.startGame.win}/>
             </div>
         )
     }

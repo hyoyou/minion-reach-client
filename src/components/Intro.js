@@ -13,7 +13,7 @@ export default class Intro extends Component {
                 <div className="intro">
                     <button type="button" className="start btn btn-primary" onClick={this.gameStart}>start game</button>
                     <div className="difficulty">
-                        mode: 
+                        MODE: 
                         <button type="button" className="level btn btn-warning">easy</button> 
                         <button type="button" className="level btn btn-primary">normal</button> 
                         <button type="button" className="level btn btn-warning">hard</button> 

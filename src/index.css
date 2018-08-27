@@ -13,7 +13,7 @@ ul {
 /* ================ Navigation ================ */
 .minion {
   font-family: 'Luckiest Guy', cursive;
-  font-size: 5rem;
+  font-size: 5vw;
   color: #0073b1;
 }
 
@@ -21,14 +21,14 @@ ul {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   letter-spacing: .2rem;
-  font-size: 5rem;
+  font-size: 5vw;
   color: #0073b1;
 }
 
 .navi a {
   padding: 0 2% 2% 2%;
   font-family: 'Love Ya Like A Sister', cursive;
-  font-size: 1.5rem;
+  font-size: 1.5vw;
   color: #0073b1;
 }
 
@@ -44,12 +44,13 @@ ul {
 }
 
 .start {
-  font-size: 1.5rem;
-  padding: 2% 7%;
-  margin: 5% 0 2% 0;
+  font-size: 1.5vw;
+  padding: 1.5% 5%;
+  margin: 3% 0 2% 0;
 }
 
 .level {
+  width: 100px;
   margin: 2% 2% 5% 2%;
 }
 
@@ -175,4 +176,55 @@ ul {
   position: absolute;
   bottom: 39.5vh;
   /* transform: rotate(38deg) */
+}
+
+/* ================ Modal ================ */
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(234, 236, 69, 0.7);
+  z-index: 100;
+  position: fixed;
+}
+
+.modal-content {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  top: 27%;
+  transform: translateY(-50%);
+  width: 65%;
+  height: 50%;
+  background-color: white;
+  border: 5px solid #0073b1;
+  font-family: 'VT323', monospace;
+}
+
+.btn-close {
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color: #cbcbcb;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.mission-state {
+  font-size: 3rem;
+  color: #0073b1;
+}
+
+.game-won {
+  color: #054263;
+}
+
+.game-lost {
+  color: red;
+}
+
+.game-over-img {
+  width: 50%;
+  height: 50%;
 }
