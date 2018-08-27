@@ -89,7 +89,7 @@ export default class GameContainer extends Component {
         if (this.state.gameState.join('') === this.state.word) {
             // setTimeout(function() {alert('You Won!')}, 500);
             this.setState({ win: true });
-            this.toggleModal();
+            setTimeout(this.toggleModal, 1500);
         }
     }
 
@@ -101,7 +101,7 @@ export default class GameContainer extends Component {
         })
 
         this.setState({ win: false });
-        this.toggleModal();
+        setTimeout(this.toggleModal, 1500);
         // setTimeout(function() {alert('The minions got all the bananas')}, 500);
     }
 

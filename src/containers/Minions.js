@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export default class Minions extends Component {
     stackMinions = () => {
-        let minion6 = 'https://imgur.com/qFK4OlA.png';
+        let minion6 = 'https://imgur.com/MP4tcmz.png';
         let minion5 = 'https://imgur.com/mieOImG.png';
         let minion4 = 'https://imgur.com/m68M2Pm.png';
         let minion3 = 'https://imgur.com/H3O04L6.png';
