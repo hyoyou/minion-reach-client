@@ -116,7 +116,7 @@ export default class GameContainer extends Component {
             <div className="game-container" tabIndex="0" onKeyDown={this.handleInput}>
                 <Game lives={this.state.lives} gameState={this.state.gameState} wrongGuesses={this.state.wrongGuesses} checkGuess={this.checkGuess} />
                 <Minions lives={this.state.lives} />
-                <Modal toggle={this.state.toggle} toggleModal={this.toggleModal} win={this.startGame.win}/>
+                <Modal toggle={this.state.toggle} toggleModal={this.toggleModal} win={this.state.win}/>
             </div>
         )
     }
