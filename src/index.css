@@ -58,26 +58,30 @@ ul {
 .game-container {
   width: 100%;
   height: 100%;
-  padding: 0 10%;
+  padding: 0 5%;
 }
 
 .game {
   float: left;
-  width: 73.5vw;
+  width: 70%;
   height: 75vh;
-  padding: 5% 10%;
+  padding: 5%;
   font-family: 'VT323', monospace;
   font-size: 2rem;
 }
 
 .directions {
   font-size: 1.25rem;
+  width: 568px;
+  margin: 0 auto;
 }
 
 .game-board {
   border: 10px solid grey;
   background-color: rgb(226, 226, 226);
   align-content: center;
+  width: 566px;
+  margin: 0 auto;
 }
 
 .game-guess {
@@ -124,12 +128,13 @@ ul {
 .minions-container {
   background-image: url(./images/BananaTree.jpg);
   background-repeat: no-repeat;
-  background-size: 83%;
+  background-size: 270px 470px;
   background-position: bottom;
   float: left;
-  width: 25vw;
-  height: 75vh;
-  padding: 10%;
+  width: 20%;
+  min-width: 270px;
+  height: 550px;
+  padding: 5%;
 }
 
 .minions img {
