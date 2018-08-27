@@ -57,6 +57,7 @@ ul {
 /* ================ Game Container ================ */
 .game-container {
   width: 100%;
+  min-width: 1000px;
   height: 100%;
   padding: 0 5%;
 }
@@ -135,6 +136,7 @@ ul {
   min-width: 270px;
   height: 550px;
   padding: 5%;
+  position: relative;
 }
 
 .minions img {
@@ -144,49 +146,49 @@ ul {
 }
 
 .minion1 {
-  width: 5vw;
-  height: 7vh;
+  width: 60px;
+  height: 60px;
   position: absolute;
-  bottom: 2vh;
+  bottom: 0;
 }
 
 .minion2 {
-  width: 4.25vw;
-  height: 7.5vh;
+  width: 45px;
+  height: 60px;
   position: absolute;
-  bottom: 8.7vh;
-  transform: rotate(-11deg);
+  bottom: 58px;
+  transform: rotate(-10deg);
 }
 
 .minion3 {
-  width: 5.2vw;
-  height: 7.5vh;
+  width: 54px;
+  height: 61px;
   position: absolute;
-  bottom: 15.75vh;
-  transform: rotate(14deg)
+  bottom: 115px;
+  transform: rotate(12deg)
 }
 
 .minion4 {
-  width: 4.75vw;
-  height: 8vh;
+  width: 50px;
+  height: 65px;
   position: absolute;
-  bottom: 22.5vh;
-  transform: rotate(-7deg)
+  bottom: 170px;
+  transform: rotate(-8deg)
 }
 
 .minion5 {
-  width: 6.5vw;
-  height: 9.5vh;
+  width: 70px;
+  height: 70px;
   position: absolute;
-  bottom: 29.5vh;
+  bottom: 224px;
 }
 
 .minion6 {
-  width: 6.25vw;
-  height: 12vh;
+  width: 66px;
+  height: 75px;
   position: absolute;
-  bottom: 39.5vh;
-  /* transform: rotate(38deg) */
+  bottom: 290px;
+  transform: rotate(12deg)
 }
 
 /* ================ Modal ================ */
