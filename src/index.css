@@ -26,6 +26,26 @@ ul {
 }
 
 /* ================ Game Container ================ */
+.intro-container {
+  padding-top: 20px;
+}
+
+.intro img {
+  width: 50%;
+  height: 50%;
+}
+
+.start {
+  font-size: 1.5rem;
+  padding: 2% 7%;
+  margin: 5%;
+}
+
+.level {
+  margin: 2%;
+}
+
+/* ================ Game Container ================ */
 .game {
   float: left;
   width: 73.5vw;

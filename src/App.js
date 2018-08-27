@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
+
+import Header from './components/Header';
+import Intro from './components/Intro';
 import GameContainer from './containers/GameContainer';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <h1 className="App-title"><span className="minion">minion</span> <span className="reach">/REACH/</span></h1>
-          <p>Leaderboard Login Sign Up</p>
-        </header>
-        <GameContainer />
+        <BrowserRouter>
+          <div>
+            <Header />
+            <Switch>
+              <Route exact path='/' component={Intro} />
+              <Route exact path='/play' component={GameContainer} />
+            </Switch>
+          </div>
+        </BrowserRouter>
       </div>
     );
   }

@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  border: 10px solid #0073b1;
 }
 
 /* .App-logo {
@@ -14,6 +13,7 @@
   background-size: 18%;
   height: 20vh;
   padding: 20px;
+  border: 10px solid #0073b1;
 }
 
 .App-title {
