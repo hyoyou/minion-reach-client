@@ -14,6 +14,16 @@ ul {
   outline: none !important;
 }
 
+.blue-underline {
+  color: #054263;
+  text-decoration: underline;
+}
+
+.red-underline {
+  color: red;
+  text-decoration: underline;
+}
+
 /* ================ Navigation ================ */
 .minion {
   font-family: 'Luckiest Guy', cursive;
@@ -115,9 +125,8 @@ ul {
   padding-right: 2%;
 }
 
-.passcode-miss{
-  color: red;
-  text-decoration: underline;
+.passcode-header {
+  letter-spacing: .5rem;
 }
 
 .keyboard {
@@ -255,16 +264,6 @@ ul {
 .mission-state {
   font-size: 3rem;
   color: #0073b1;
-}
-
-.game-won {
-  color: #054263;
-  text-decoration: underline;
-}
-
-.game-lost {
-  color: red;
-  text-decoration: underline;
 }
 
 .game-over-img {

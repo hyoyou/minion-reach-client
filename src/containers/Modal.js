@@ -20,7 +20,7 @@ export default class Modal extends Component {
             <div className="modal-overlay" style={this.props.toggle ? display : hide}>
                 <div className="modal-content">
                     <a className="btn-close" onClick={(event) => this.props.toggleModal(event)}>X</a>
-                    <h4 className="mission-state">MISSION: {this.props.win ? <span className="game-won">CLEARED</span> : <span className="game-lost">FAILED</span>}</h4>
+                    <h4 className="mission-state">MISSION: {this.props.win ? <span className="blue-underline">CLEARED</span> : <span className="red-underline">FAILED</span>}</h4>
                     <img className='game-over-img' src={this.props.win ? winImg : loseImg} alt='minions win or lose' />
                     <p>{this.props.win ? winMessage : lossMessage}</p>
                     <button className="replay btn btn-primary" onClick={this.props.restart}>Play Again</button>

@@ -10,7 +10,7 @@ export default class Game extends Component {
 
         return (
             <div className="game">
-                <p className="directions">Your mission: The minions locked us out of our banana farm! It only takes 6 minions to /REACH/ the bananas. Decipher the code to stop them!</p>
+                <p className="directions"><span className="red-underline">YOUR MISSION</span> The minions locked us out of our banana farm! It only takes 6 minions to /REACH/ the bananas. Decipher the code to stop them!</p>
                 <div className="game-board">
                     <div className="game-stats">
                         <span className="replay-game">
@@ -19,8 +19,8 @@ export default class Game extends Component {
                         <span className="lives-left">Lives Left: {this.props.lives}</span>
                     </div>
                     <div className="game-guess">
-                        PASSCODE: 
-                        <div className={this.props.lives !== 0 ? "passcode" : "passcode-miss"}>
+                        <div className="passcode-header">PASSCODE:</div>
+                        <div className={this.props.lives !== 0 ? "passcode" : "red-underline"}>
                             {gameState.length > 1 && gameState.join(' ')}
                         </div>
                         <br />
