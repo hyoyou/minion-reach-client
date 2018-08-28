@@ -7,8 +7,10 @@ export default class Header extends Component {
         return (
             <header className="App-header">
                 <h1 className="App-title">
-                    <span className="minion">minion</span> 
-                    <span className="reach">/REACH/</span>
+                    <a href="/">
+                        <span className="minion">minion</span> 
+                        <span className="reach">/REACH/</span>
+                    </a>
                 </h1>
                 <NavBar />
             </header>
