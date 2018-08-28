@@ -48,7 +48,6 @@ class GameContainer extends Component {
     }
 
     handleInput = (event) => {
-        // console.log(event.key)
         if (event.keyCode >= 65 && event.keyCode <= 90) {
             let key = event.key.toUpperCase();
             this.checkGuess(key);
@@ -56,7 +55,6 @@ class GameContainer extends Component {
     }
     
     checkGuess = (key) => {
-        // console.log(key)
         let updatedGameState = this.state.gameState;
 
         if (this.state.wrongGuesses.indexOf(key) < 0) {
@@ -124,7 +122,6 @@ class GameContainer extends Component {
 }
 
 const mapStateToProps = state => {
-    // console.log(state.words)
     return {
         word: state.words.word
     }
