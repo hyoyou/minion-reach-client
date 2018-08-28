@@ -125,10 +125,6 @@ ul {
   padding-right: 2%;
 }
 
-.passcode-header {
-  letter-spacing: .5rem;
-}
-
 .keyboard {
   display: flex;
   flex-flow: row wrap;

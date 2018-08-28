@@ -19,7 +19,7 @@ export default class Game extends Component {
                         <span className="lives-left">Lives Left: {this.props.lives}</span>
                     </div>
                     <div className="game-guess">
-                        <div className="passcode-header">PASSCODE:</div>
+                        PASSCODE:
                         <div className={this.props.lives !== 0 ? "passcode" : "red-underline"}>
                             {gameState.length > 1 && gameState.join(' ')}
                         </div>
