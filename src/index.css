@@ -10,6 +10,10 @@ ul {
   padding: 0;
 }
 
+:focus {
+  outline: none !important;
+}
+
 /* ================ Navigation ================ */
 .minion {
   font-family: 'Luckiest Guy', cursive;
@@ -69,6 +73,10 @@ ul {
   padding: 5%;
   font-family: 'VT323', monospace;
   font-size: 2rem;
+}
+
+.game :focus {
+  outline: none !important;
 }
 
 .directions {
@@ -146,6 +154,10 @@ ul {
   height: 550px;
   padding: 5%;
   position: relative;
+}
+
+.minions-container :focus {
+  outline: none !important;
 }
 
 .minions img {
