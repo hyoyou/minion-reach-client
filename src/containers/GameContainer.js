@@ -17,7 +17,7 @@ class GameContainer extends Component {
     }
 
     componentDidMount() {
-        this.props.fetchWord().then(() => {
+        this.props.fetchWord(this.props.difficulty).then(() => {
             this.startGame()
         })
     }
@@ -123,7 +123,8 @@ class GameContainer extends Component {
 
 const mapStateToProps = state => {
     return {
-        word: state.words.word
+        word: state.words.word,
+        difficulty: state.words.difficulty
     }
 }
 
