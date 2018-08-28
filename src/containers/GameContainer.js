@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import Game from './Game';
 import Minions from './Minions';
 import Modal from './Modal';
 
+import { fetchWord } from '../actions/wordsActions';
+
 const APIURL = `http://localhost:3001/api/words`;
 
-export default class GameContainer extends Component {
+class GameContainer extends Component {
     state = {
-        word: '',
         gameState: [],
         wrongGuesses: [],
         lives: 6,
@@ -18,33 +20,16 @@ export default class GameContainer extends Component {
     }
 
     componentDidMount() {
-        // extract to actions
-        fetch(`${APIURL}`)
-            .then(response => response.json())
-            .then(result => {
-                let secretWord = result[Math.floor(Math.random()*result.length)];
-                this.setState({
-                    word: secretWord.toUpperCase()
-                })
-
-                this.startGame(secretWord);
-            })
-    }
-
-    startGame = (secretWord) => {
-        let gameStart = [];
-        for (let i = 0; i < secretWord.length; i++) {
-            gameStart.push('_');
-        }
-
-        this.setState({
-            gameState: gameStart
+        this.props.fetchWord().then(() => {
+            this.setState({
+                word: this.props.word,
+                gameState: this.props.gameState
+            });
         })
     }
 
     handleInput = (event) => {
         // console.log(event.key)
-        // debugger
         if (event.keyCode >= 65 && event.keyCode <= 90) {
             let key = event.key.toUpperCase();
             this.checkGuess(key);
@@ -53,17 +38,16 @@ export default class GameContainer extends Component {
     
     checkGuess = (key) => {
         // console.log(key)
-        // debugger
         let updatedGameState = this.state.gameState;
 
         if (this.state.wrongGuesses.indexOf(key) < 0) {
-            if (this.state.word.indexOf(key) > -1) {
+            if (this.props.word.indexOf(key) > -1) {
                 let indices = [];
-                let index = this.state.word.indexOf(key);
+                let index = this.props.word.indexOf(key);
 
                 while (index !== -1) {
                     indices.push(index);
-                    index = this.state.word.indexOf(key,index+1);
+                    index = this.props.word.indexOf(key,index+1);
                 }
 
                 for (let i = 0; i <= indices.length; i++) {
@@ -86,15 +70,14 @@ export default class GameContainer extends Component {
     }
 
     checkWin = () => {
-        if (this.state.gameState.join('') === this.state.word) {
-            // setTimeout(function() {alert('You Won!')}, 500);
+        if (this.props.gameState.join('') === this.props.word) {
             this.setState({ win: true });
             setTimeout(this.toggleModal, 1500);
         }
     }
 
     gameOver = () => {
-        let reveal = this.state.word.split('');
+        let reveal = this.props.word.split('');
         
         this.setState({
             gameState: reveal
@@ -102,10 +85,9 @@ export default class GameContainer extends Component {
 
         this.setState({ win: false });
         setTimeout(this.toggleModal, 1500);
-        // setTimeout(function() {alert('The minions got all the bananas')}, 500);
     }
 
-    toggleModal = event => {
+    toggleModal = () => {
         this.setState(prevState => ({
             toggle: !prevState.toggle
         }))
@@ -121,3 +103,13 @@ export default class GameContainer extends Component {
         )
     }
 }
+
+const mapStateToProps = state => {
+    // console.log(state.words)
+    return {
+        word: state.words.word,
+        gameState: state.words.gameState
+    }
+}
+
+export default connect(mapStateToProps, { fetchWord })(GameContainer)
