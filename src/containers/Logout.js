@@ -16,7 +16,7 @@ class Logout extends Component {
       return (
         <div style={{ marginTop: '50px' }}>
           <h2>Are you sure you want to log out?</h2>
-          <button className="btn btn-primary" onClick={(event) => this.onLogout(event)}>Logout</button>
+          <button className="btn btn-primary btn-margin" onClick={(event) => this.onLogout(event)}>Logout</button>
         </div>
       )
     }

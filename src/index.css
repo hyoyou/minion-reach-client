@@ -46,6 +46,11 @@ ul {
   color: #0073b1;
 }
 
+.btn-margin {
+  margin-top: 15px;
+  padding: 10px 40px;
+}
+
 /* ================ Intro Container ================ */
 .intro-container {
   padding-top: 20px;
@@ -265,4 +270,37 @@ ul {
 .game-over-img {
   width: 50%;
   height: 50%;
+}
+
+/* ================ Leaderboard ================ */
+.leaderboard-container {
+  padding: 5%;
+  text-align: center;
+  font-size: 1.25rem;
+  background-color: #f6dd7d;
+  height: calc(100vh - 180px);
+}
+
+.leaderboard-container h2 {
+  font-family: 'Love Ya Like A Sister', cursive;
+}
+
+.leaderboard-container table, th, td {
+  border-collapse: separate !important;
+  background-color: white;
+  margin: 0 auto;
+  border: 3px solid #0073b1;
+  border-radius: 25px;
+}
+
+.leaderboard-container tr {
+  height: 40px;
+}
+
+.rank, .score {
+  width: 80px;
+}
+
+.username {
+  width: 300px;
 }

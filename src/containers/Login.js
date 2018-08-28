@@ -53,7 +53,7 @@ class Login extends Component {
             />
             <br />
 
-            <button type="submit" className="btn btn-primary" onClick={this.onLogin}>Log In</button>
+            <button type="submit" className="btn btn-primary btn-margin" onClick={this.onLogin}>Log In</button>
           </form>
         </div>
       )
