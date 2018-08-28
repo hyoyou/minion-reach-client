@@ -7,24 +7,43 @@ import Modal from './Modal';
 
 import { fetchWord } from '../actions/wordsActions';
 
-const APIURL = `http://localhost:3001/api/words`;
-
 class GameContainer extends Component {
     state = {
         gameState: [],
         wrongGuesses: [],
         lives: 6,
-        difficulty: 3,
         toggle: false,
         win: false,
     }
 
     componentDidMount() {
         this.props.fetchWord().then(() => {
-            this.setState({
-                word: this.props.word,
-                gameState: this.props.gameState
-            });
+            this.startGame()
+        })
+    }
+
+    startGame = () => {	
+        let gameStart = [];	
+        for (let i = 0; i < this.props.word.length; i++) {	
+            gameStart.push('_');	
+        }	
+         this.setState({	
+            gameState: gameStart	
+        })
+    }
+
+    restartGame = () => {
+        this.setState({
+            gameState: [],
+            wrongGuesses: [],
+            lives: 6,
+            difficulty: 3,
+            toggle: false,
+            win: false,
+        })
+
+        this.props.fetchWord().then(() => {
+            this.startGame()
         })
     }
 
@@ -70,7 +89,7 @@ class GameContainer extends Component {
     }
 
     checkWin = () => {
-        if (this.props.gameState.join('') === this.props.word) {
+        if (this.state.gameState.join('') === this.props.word) {
             this.setState({ win: true });
             setTimeout(this.toggleModal, 1500);
         }
@@ -88,7 +107,7 @@ class GameContainer extends Component {
     }
 
     toggleModal = () => {
-        this.setState(prevState => ({
+        this.setState((prevState) => ({
             toggle: !prevState.toggle
         }))
     }
@@ -96,9 +115,9 @@ class GameContainer extends Component {
     render() {
         return (
             <div className="game-container" tabIndex="0" onKeyDown={this.handleInput}>
-                <Game lives={this.state.lives} gameState={this.state.gameState} wrongGuesses={this.state.wrongGuesses} checkGuess={this.checkGuess} />
+                <Game lives={this.state.lives} gameState={this.state.gameState} wrongGuesses={this.state.wrongGuesses} checkGuess={this.checkGuess} restart={this.restartGame} />
                 <Minions lives={this.state.lives} />
-                <Modal toggle={this.state.toggle} toggleModal={this.toggleModal} win={this.state.win}/>
+                <Modal toggle={this.state.toggle} toggleModal={this.toggleModal} win={this.state.win} restart={this.restartGame} />
             </div>
         )
     }
@@ -107,8 +126,7 @@ class GameContainer extends Component {
 const mapStateToProps = state => {
     // console.log(state.words)
     return {
-        word: state.words.word,
-        gameState: state.words.gameState
+        word: state.words.word
     }
 }
 

@@ -23,7 +23,7 @@ export default class Modal extends Component {
                     <h4 className="mission-state">MISSION: {this.props.win ? <span className="game-won">CLEARED</span> : <span className="game-lost">FAILED</span>}</h4>
                     <img className='game-over-img' src={this.props.win ? winImg : loseImg} alt='minions win or lose' />
                     <p>{this.props.win ? winMessage : lossMessage}</p>
-                    <button className="replay btn btn-primary">Play Again</button>
+                    <button className="replay btn btn-primary" onClick={this.props.restart}>Play Again</button>
                 </div>
             </div>
         );
