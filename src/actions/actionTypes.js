@@ -1,2 +1,6 @@
 export const FETCH_WORD = 'FETCH_WORD';
 export const SET_DIFFICULTY = 'SET_DIFFICULTY';
+
+export const FIND_USER_SUCCESS = 'FIND_USER_SUCCESS';
+export const LOAD_USER_SUCCESS = 'LOAD_USER_SUCCESS';
+export const LOGOUT = 'LOGOUT';

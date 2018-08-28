@@ -5,6 +5,9 @@ import './App.css';
 import Header from './components/Header';
 import Intro from './components/Intro';
 import GameContainer from './containers/GameContainer';
+import Login from './containers/Login';
+import Logout from './containers/Logout';
+import Signup from './containers/Signup';
 
 class App extends Component {
   render() {
@@ -16,6 +19,9 @@ class App extends Component {
             <Switch>
               <Route exact path='/' component={Intro} />
               <Route exact path='/play' component={GameContainer} />
+              <Route exact path='/login' component={Login} />
+              <Route exact path='/logout' component={Logout} />
+              <Route exact path='/signup' component={Signup} />
             </Switch>
           </div>
         </BrowserRouter>

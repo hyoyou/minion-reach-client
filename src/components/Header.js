@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 
 import NavBar from './NavBar';
+import NavBarSession from './NavBarSession';
 
-export default class Header extends Component {
+class Header extends Component {
     render() {
         return (
             <header className="App-header">
@@ -12,8 +14,16 @@ export default class Header extends Component {
                         <span className="reach">/REACH/</span>
                     </a>
                 </h1>
-                <NavBar />
+                { this.props.session ? <NavBarSession /> : <NavBar /> }
             </header>
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        session: state.session.session
+    }
+}
+
+export default connect(mapStateToProps)(Header);
