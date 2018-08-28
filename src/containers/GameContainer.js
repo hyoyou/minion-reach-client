@@ -37,12 +37,11 @@ class GameContainer extends Component {
             gameState: [],
             wrongGuesses: [],
             lives: 6,
-            difficulty: 3,
             toggle: false,
             win: false,
         })
 
-        this.props.fetchWord().then(() => {
+        this.props.fetchWord(this.props.difficulty).then(() => {
             this.startGame()
         })
     }
@@ -89,7 +88,7 @@ class GameContainer extends Component {
     checkWin = () => {
         if (this.state.gameState.join('') === this.props.word) {
             this.setState({ win: true });
-            setTimeout(this.toggleModal, 1200);
+            setTimeout(this.toggleModal, 1500);
         }
     }
 
@@ -101,7 +100,7 @@ class GameContainer extends Component {
         })
 
         this.setState({ win: false });
-        setTimeout(this.toggleModal, 1200);
+        setTimeout(this.toggleModal, 1500);
     }
 
     toggleModal = () => {
