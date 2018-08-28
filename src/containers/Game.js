@@ -12,8 +12,9 @@ export default class Game extends Component {
             <div className="game">
                 <p className="directions">Your mission: The minions locked us out of our banana farm! It only takes 6 minions to /REACH/ the bananas. Decipher the code to stop them!</p>
                 <div className="game-board">
-                    <div className="lives-left">
-                        Lives Left: {this.props.lives}
+                    <div className="game-stats">
+                        <span className="replay-game"><button onClick={this.props.restart}>&#8634; New Game</button></span>
+                        <span className="lives-left">Lives Left: {this.props.lives}</span>
                     </div>
                     <div className="game-guess">
                         PASSCODE: 

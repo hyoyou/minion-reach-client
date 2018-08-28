@@ -91,7 +91,7 @@ class GameContainer extends Component {
     checkWin = () => {
         if (this.state.gameState.join('') === this.props.word) {
             this.setState({ win: true });
-            setTimeout(this.toggleModal, 1500);
+            setTimeout(this.toggleModal, 1200);
         }
     }
 
@@ -103,7 +103,7 @@ class GameContainer extends Component {
         })
 
         this.setState({ win: false });
-        setTimeout(this.toggleModal, 1500);
+        setTimeout(this.toggleModal, 1200);
     }
 
     toggleModal = () => {

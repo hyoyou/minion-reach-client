@@ -19,11 +19,6 @@ export const fetchWord = () => {
                 type: types.FETCH_WORD,
                 payload: secretWord.toUpperCase()
             })
-
-        //     dispatch({
-        //         type: types.SET_GAME_STATE,
-        //         payload: gameStart
-        //     })
         })
     }
 }
