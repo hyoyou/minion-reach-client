@@ -58,19 +58,19 @@ ul {
 }
 
 .intro img {
-  width: 50%;
-  height: 50%;
+  width: 700px;
+  height: 400px;
 }
 
 .start {
   font-size: 1.5vw;
   padding: 1.5% 5%;
-  margin: 3% 0 2% 0;
+  margin: 2% 0;
 }
 
 .level {
   width: 100px;
-  margin: 2% 2% 5% 2%;
+  margin: 2% 2% 4% 2%;
 }
 
 /* ================ Game Container ================ */
