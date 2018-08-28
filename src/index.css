@@ -19,7 +19,7 @@ ul {
   text-decoration: underline;
 }
 
-.red-underline {
+.red-underline, .passcode-miss {
   color: red;
   text-decoration: underline;
 }
@@ -27,7 +27,7 @@ ul {
 /* ================ Navigation ================ */
 .minion {
   font-family: 'Luckiest Guy', cursive;
-  font-size: 5vw;
+  font-size: 65px;
   color: #0073b1;
 }
 
@@ -35,14 +35,14 @@ ul {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   letter-spacing: .2rem;
-  font-size: 5vw;
+  font-size: 65px;
   color: #0073b1;
 }
 
 .navi a {
   padding: 0 2% 2% 2%;
   font-family: 'Love Ya Like A Sister', cursive;
-  font-size: 1.5vw;
+  font-size: 20px;
   color: #0073b1;
 }
 

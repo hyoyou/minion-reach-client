@@ -20,7 +20,7 @@ export default class Game extends Component {
                     </div>
                     <div className="game-guess">
                         PASSCODE:
-                        <div className={this.props.lives !== 0 ? "passcode" : "red-underline"}>
+                        <div className={this.props.lives !== 0 ? "passcode" : "passcode-miss"}>
                             {gameState.length > 1 && gameState.join(' ')}
                         </div>
                         <br />

@@ -6,7 +6,10 @@ export default class Header extends Component {
     render() {
         return (
             <header className="App-header">
-                <h1 className="App-title"><span className="minion">minion</span> <span className="reach">/REACH/</span></h1>
+                <h1 className="App-title">
+                    <span className="minion">minion</span> 
+                    <span className="reach">/REACH/</span>
+                </h1>
                 <NavBar />
             </header>
         )
