@@ -4,7 +4,7 @@ BELLOOO!! I mean.. Hello! Welcome to Minion Reach, a ~~word guessing game~~ chal
 
 <hr />
 
-_This is a word guessing game created with React and Ruby on Rails that I created in consideration for an apprenticeship position at LinkedIn_
+_This is a word guessing game created with React and Ruby on Rails that I created in consideration for an apprenticeship opportunity_
 
 ## Getting Started
 
@@ -21,7 +21,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/hyoyou
 ## License
 
 The project is available as open source under the terms of the [MIT License](https://github.com/hyoyou/minion-reach-client/blob/master/LICENSE).
-
-LinkedIn and the LinkedIn logo are registered trademarks and copyrights of LinkedIn.
-
-Minions are registered trademarks and copyrights of Universal Studios.
