@@ -24,6 +24,14 @@ ul {
   text-decoration: underline;
 }
 
+.page-error {
+  color: red;
+  border: 2px solid red;
+  margin: 0;
+}
+
+/* ================ Sign Up, Log In, Log Out ================ */
+
 .user-container {
   background-image: url(https://imgur.com/Cq5egiJ.png);
   background-repeat: no-repeat;

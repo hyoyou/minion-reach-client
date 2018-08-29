@@ -1,4 +1,5 @@
 import * as types from './actionTypes';
+import { loadError, clearError } from './errorActions';
 
 const loadUserSuccess = (user) => {
     return {
@@ -16,22 +17,26 @@ const updateUserSuccess = (user) => {
 
 export const loginUser = (credentials) => {
     return dispatch => {
-      return fetch('http://localhost:3001/api/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(credentials)
-      })
-      .then(response => response.json())
-      .then(result => {
-        //   debugger
-          localStorage.setItem('Token', result.token)
-          dispatch(loadUser(result.user.id))
-      })
-      .catch(error => console.log(error))
+        return fetch('http://localhost:3001/api/login', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(credentials)
+        })
+        .then(response => response.json())
+        .then(result => {
+            if (result.errors) {
+                dispatch(loadError(result.errors))
+            } else {
+                localStorage.setItem('Token', result.token)
+                dispatch(loadUser(result.user.id))
+                dispatch(clearError())
+            }
+        })
+        .catch(error => console.log(error))
     }
-  }
+}
 
 export const signupUser = (userInfo) => {
     return dispatch => {
@@ -43,9 +48,14 @@ export const signupUser = (userInfo) => {
             body: JSON.stringify({ user: userInfo })
         })
         .then(response => response.json())
-    .then(result => {
-            localStorage.setItem('Token', result.token)
-            dispatch(findUser(result.token))
+        .then(result => {
+            if (result.errors) {
+                dispatch(loadError(result.errors))
+            } else {
+                localStorage.setItem('Token', result.token)
+                dispatch(findUser(result.token))
+                dispatch(clearError())
+            }
         })
         .catch(error => console.log(error))
     }
@@ -107,4 +117,4 @@ export const logout = () => {
         localStorage.clear();
         dispatch({type: types.LOGOUT});
     }
-  }
+}
