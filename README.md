@@ -1,6 +1,6 @@
 # Minion /REACH/
 
-BELLOOO!! I mean.. Hello! Welcome to Minion Reach, a ~~word guessing game~~ challenging mission in which you are asked to deciper the codes set up by minions in order to save a banana farm from being consumed wholly by minions. Each mistake allows a minion to sneakily enter the farm, and 6 stacked minions will be able to reach a tree, in which the mission will then be over. It won't be easy! The minions have an extensive vocabulary contrary to popular belief. Are you up for the challenge?
+BELLOOO!! I mean.. Hello! Welcome to Minion Reach, a ~~word guessing game~~ challenging mission in which you are asked to deciper the codes set up by minions in order to save a banana farm from being consumed wholly by minions. Each mistake allows a minion to sneakily enter the farm, and the mission will be over when 6 minions are able to enter. It won't be easy! The minions have a very extensive vocabulary. Are you up for the challenge?
 
 <hr />
 
@@ -24,4 +24,3 @@ The project is available as open source under the terms of the [MIT License](htt
 
 LinkedIn and the LinkedIn logo are registered trademarks and copyrights of LinkedIn.
 Minions are registered trademarks and copyrights of Universal Studios.
-
