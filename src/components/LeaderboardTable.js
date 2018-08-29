@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const LeaderboardTable = ({ users }) => {
     return (
@@ -24,6 +25,7 @@ const LeaderboardTable = ({ users }) => {
                     </tbody>
                 </table>
             }
+            <NavLink to='/play' className="game-link">Play a Game</NavLink>
         </div>
     )
 }

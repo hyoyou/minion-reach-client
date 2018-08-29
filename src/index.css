@@ -358,3 +358,12 @@ ul {
 .username {
   width: 300px;
 }
+
+.game-link {
+  font-family: 'Love Ya Like A Sister', cursive;
+  color: #0073b1;
+}
+
+.game-link:hover {
+  text-decoration: none;
+}
