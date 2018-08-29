@@ -77,7 +77,7 @@ class GameContainer extends Component {
                 }
                 
                 this.setState({ gameState: updatedGameState })
-                
+                console.log("Current state:", updatedGameState)
                 this.checkWin();
             } else if (this.state.lives > 1 ) {
                 this.setState({ 
@@ -148,6 +148,7 @@ class GameContainer extends Component {
                     checkGuess={this.checkGuess} 
                     restart={this.restartGame} 
                     difficulty={this.props.difficulty}
+                    user={this.props.user}
                 />
                 <Minions lives={this.state.lives} />
                 <Modal toggle={this.state.toggle} toggleModal={this.toggleModal} win={this.state.win} restart={this.restartGame} />
