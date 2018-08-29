@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { NavLink } from 'react-router-dom';
 
 import NavBar from './NavBar';
 import NavBarSession from './NavBarSession';
@@ -9,10 +10,10 @@ class Header extends Component {
         return (
             <header className="App-header">
                 <h1 className="App-title">
-                    <a href="/">
+                    <NavLink to="/">
                         <span className="minion">minion</span> 
                         <span className="reach">/REACH/</span>
-                    </a>
+                    </NavLink>
                 </h1>
                 { this.props.session ? <NavBarSession /> : <NavBar /> }
             </header>
