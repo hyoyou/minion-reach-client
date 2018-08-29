@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-export default class Game extends Component {
+class Game extends Component {
     state = {
         alphabet: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     }
@@ -35,7 +36,21 @@ export default class Game extends Component {
                 <div className="difficulty">
                     difficulty: {this.props.difficulty} <NavLink to='/'>change?</NavLink>
                 </div>
+                { this.props.user.id &&
+                    <div className="user-score">
+                        your score: {this.props.user.score}
+                    </div>
+                }
             </div>
         )
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        user: state.session.user
+    }
+}
+
+
+export default connect(mapStateToProps)(Game);
