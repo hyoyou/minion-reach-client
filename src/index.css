@@ -24,6 +24,48 @@ ul {
   text-decoration: underline;
 }
 
+.user-container {
+  background-image: url(https://imgur.com/Cq5egiJ.png);
+  background-repeat: no-repeat;
+  background-size: 300px;
+  background-position: bottom;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 1.25rem;
+  letter-spacing: .2rem;
+  background-color: #f6dd7d;
+  width: 100%;
+  height: calc(100vh - 180px);
+  padding-top: 50px;
+}
+
+/* Chrome/Opera/Safari */
+::-webkit-input-placeholder { 
+  font-size: 1rem;
+  letter-spacing: .1rem;
+  color: lightgray;
+}
+
+/* Firefox 19+ */
+::-moz-placeholder { 
+  font-size: 1rem;
+  letter-spacing: .1rem;
+  color: lightgray;
+}
+
+/* IE 10+ */
+:-ms-input-placeholder {
+  font-size: 1rem;
+  letter-spacing: .1rem;
+  color: lightgray;
+}
+
+/* Firefox 18- */
+:-moz-placeholder { 
+  font-size: 1rem;
+  letter-spacing: .1rem;
+  color: lightgray;
+}
+
 /* ================ Navigation ================ */
 .minion {
   font-family: 'Luckiest Guy', cursive;

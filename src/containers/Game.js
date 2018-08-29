@@ -11,7 +11,7 @@ export default class Game extends Component {
 
         return (
             <div className="game">
-                <p className="directions"><span className="red-underline">YOUR MISSION</span> The minions locked us out of our banana farm! It only takes 6 minions to /REACH/ the bananas. Decipher the code to stop them!</p>
+                <p className="directions"><span className="red-underline">YOUR MISSION:</span> The minions locked us out of our banana farm! It only takes 6 minions to /REACH/ the bananas. Decipher the code to stop them!</p>
                 <div className="game-board">
                     <div className="game-stats">
                         <span className="replay-game">
