@@ -114,7 +114,6 @@ class GameContainer extends Component {
                         currentScore;
                         break;
                 }
-                // console.log(currentScore);
                 this.props.updateScore(currentScore, this.props.user);
             }
 
@@ -165,4 +164,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { fetchWord, findUser, updateScore })(GameContainer)
+export default connect(mapStateToProps, { fetchWord, findUser, updateScore })(GameContainer);

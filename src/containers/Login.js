@@ -19,7 +19,10 @@ class Login extends Component {
         event.preventDefault();
 
         this.props.loginUser(this.state)
-        this.props.history.push('/play');
+
+        if (this.props.user.id) {
+            this.props.history.push('/play');
+        }
     }
 
     render() {
@@ -64,8 +67,7 @@ class Login extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        user: state.session.user,
-        error: state.error.error
+        user: state.session.user
     }
 }
 

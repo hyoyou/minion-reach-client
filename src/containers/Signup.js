@@ -19,6 +19,10 @@ class SignUp extends Component {
 		event.preventDefault();
 
 		this.props.signupUser(this.state)
+		
+		if (this.props.user.id) {
+            this.props.history.push('/play');
+        }
 	}
 
 	render() {
