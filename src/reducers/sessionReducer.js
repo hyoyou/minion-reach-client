@@ -16,6 +16,11 @@ export default function sessionReducer(state = {
                 session: !!localStorage.Token,
                 user: {}
             }
+        case types.UPDATE_USER_SUCCESS:
+            return {
+                ...state,
+                user: action.payload
+            }
         default:
             return state;
     }

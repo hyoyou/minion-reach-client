@@ -2,10 +2,17 @@ import * as types from './actionTypes';
 
 const loadUserSuccess = (user) => {
     return {
-      type: types.LOAD_USER_SUCCESS,
-      payload: user
+        type: types.LOAD_USER_SUCCESS,
+        payload: user
     }
-  }
+}
+
+const updateUserSuccess = (user) => {
+    return {
+        type: types.UPDATE_USER_SUCCESS,
+        payload: user
+    }
+}
 
 export const loginUser = (credentials) => {
     return dispatch => {
@@ -70,6 +77,26 @@ export const loadUser = (userId) => {
         .then(response => response.json())
         .then(result => {
             dispatch(loadUserSuccess(result))
+        })
+        .catch(error => console.log(error))
+    }
+}
+
+export const updateScore = (score, user) => {
+    return dispatch => {
+        return fetch(`http://localhost:3001/api/users/${user.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ 
+                score,
+                id: user.id
+            })
+        })
+        .then(response => response.json())
+        .then(result => {
+            dispatch(updateUserSuccess(result))
         })
         .catch(error => console.log(error))
     }

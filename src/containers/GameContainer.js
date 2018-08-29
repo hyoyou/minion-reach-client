@@ -6,6 +6,7 @@ import Minions from './Minions';
 import Modal from './Modal';
 
 import { fetchWord } from '../actions/wordsActions';
+import { updateScore } from '../actions/sessionActions';
 
 class GameContainer extends Component {
     state = {
@@ -88,6 +89,30 @@ class GameContainer extends Component {
     checkWin = () => {
         if (this.state.gameState.join('') === this.props.word) {
             this.setState({ win: true });
+            
+            if (this.props.user.id) {
+                let currentScore = this.props.user.score;
+                switch(this.props.difficulty) {
+                    case "easy":
+                        currentScore += 10;
+                        break;
+                    case "normal":
+                        currentScore += 30;
+                        break;
+                    case "hard":
+                        currentScore += 50;
+                        break;
+                    case "bananas":
+                        currentScore += 100;
+                        break;
+                    default:
+                        currentScore;
+                        break;
+                }
+                // console.log(currentScore);
+                this.props.updateScore(currentScore, this.props.user);
+            }
+
             setTimeout(this.toggleModal, 1500);
         }
     }
@@ -123,8 +148,9 @@ class GameContainer extends Component {
 const mapStateToProps = state => {
     return {
         word: state.words.word,
-        difficulty: state.words.difficulty
+        difficulty: state.words.difficulty,
+        user: state.session.user
     }
 }
 
-export default connect(mapStateToProps, { fetchWord })(GameContainer)
+export default connect(mapStateToProps, { fetchWord, updateScore })(GameContainer)
