@@ -8,8 +8,7 @@ class Game extends Component {
 
     render() {
         let { wrongGuesses, gameState } = this.props;
-        console.log("Passed in wrong:", wrongGuesses)
-        console.log("Passed in state:", gameState)
+   
         return (
             <div className="game">
                 <p className="directions"><span className="red-underline">YOUR MISSION:</span> The minions locked us out of our banana farm! It only takes 6 minions to /REACH/ the bananas. Decipher the code to stop them!</p>

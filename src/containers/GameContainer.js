@@ -76,8 +76,8 @@ class GameContainer extends Component {
                     updatedGameState[indices[i]] = key;
                 }
                 
-                this.setState({ gameState: updatedGameState })
-                console.log("Current state:", updatedGameState)
+                this.setState({ gameState: updatedGameState }) 
+                
                 this.checkWin();
             } else if (this.state.lives > 1 ) {
                 this.setState({ 
