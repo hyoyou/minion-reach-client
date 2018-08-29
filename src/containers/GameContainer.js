@@ -6,7 +6,7 @@ import Minions from './Minions';
 import Modal from './Modal';
 
 import { fetchWord } from '../actions/wordsActions';
-import { updateScore } from '../actions/sessionActions';
+import { findUser, updateScore } from '../actions/sessionActions';
 
 class GameContainer extends Component {
     state = {
@@ -21,6 +21,11 @@ class GameContainer extends Component {
         this.props.fetchWord(this.props.difficulty).then(() => {
             this.startGame()
         })
+
+        const token = localStorage.getItem('Token');
+        if (token) {
+            this.props.findUser(token);
+        }
     }
 
     startGame = () => {	
@@ -160,4 +165,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { fetchWord, updateScore })(GameContainer)
+export default connect(mapStateToProps, { fetchWord, findUser, updateScore })(GameContainer)
