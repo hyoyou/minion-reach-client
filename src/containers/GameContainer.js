@@ -62,7 +62,7 @@ class GameContainer extends Component {
     checkGuess = (key) => {
         let updatedGameState = this.state.gameState;
 
-        if (this.state.wrongGuesses.indexOf(key) < 0) {
+        if (!this.state.win && this.state.wrongGuesses.indexOf(key) < 0) {
             if (this.props.word.indexOf(key) > -1) {
                 let indices = [];
                 let index = this.props.word.indexOf(key);
@@ -77,7 +77,7 @@ class GameContainer extends Component {
                 }
                 
                 this.setState({ gameState: updatedGameState }) 
-                
+
                 this.checkWin();
             } else if (this.state.lives > 1 ) {
                 this.setState({ 
@@ -151,7 +151,12 @@ class GameContainer extends Component {
                     user={this.props.user}
                 />
                 <Minions lives={this.state.lives} />
-                <Modal toggle={this.state.toggle} toggleModal={this.toggleModal} win={this.state.win} restart={this.restartGame} />
+                <Modal 
+                    toggle={this.state.toggle} 
+                    toggleModal={this.toggleModal} 
+                    win={this.state.win} 
+                    restart={this.restartGame} 
+                />
             </div>
         )
     }
