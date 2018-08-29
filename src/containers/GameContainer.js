@@ -137,7 +137,14 @@ class GameContainer extends Component {
     render() {
         return (
             <div className="game-container" tabIndex="0" onKeyDown={this.handleInput}>
-                <Game lives={this.state.lives} gameState={this.state.gameState} wrongGuesses={this.state.wrongGuesses} checkGuess={this.checkGuess} restart={this.restartGame} />
+                <Game 
+                    lives={this.state.lives} 
+                    gameState={this.state.gameState} 
+                    wrongGuesses={this.state.wrongGuesses} 
+                    checkGuess={this.checkGuess} 
+                    restart={this.restartGame} 
+                    difficulty={this.props.difficulty}
+                />
                 <Minions lives={this.state.lives} />
                 <Modal toggle={this.state.toggle} toggleModal={this.toggleModal} win={this.state.win} restart={this.restartGame} />
             </div>

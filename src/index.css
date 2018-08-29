@@ -151,6 +151,10 @@ ul {
   background-color: #0073b1;
 }
 
+.difficulty {
+  font-size: 1.25rem;
+}
+
 /* ================ Minions Container ================ */
 
 .minions-container {

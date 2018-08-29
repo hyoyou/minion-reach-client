@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
 export default class Game extends Component {
     state = {
@@ -30,6 +31,9 @@ export default class Game extends Component {
                             )}
                         </ul>
                     </div>
+                </div>
+                <div className="difficulty">
+                    difficulty: {this.props.difficulty} <NavLink to='/'>change?</NavLink>
                 </div>
             </div>
         )
