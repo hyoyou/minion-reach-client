@@ -25,7 +25,7 @@ In order to address these concerns, I had to implement a few conditionals and lo
 
 Once I had the game logic working, I wanted to include a leaderboard for users who chose to sign up and log in, which required me to build a database and model in the server side. I originally thought that I would need two separate models, a User and a Leaderboard model, but since there is only one leaderboard that shows the top 10 users of the game, I wrote a method in the users controller that returns the top 10 users sorted by score.
 
-I really enjoyed the process of creating this application and hope that users are able to enjoy it as much as I do!
+I really enjoyed the process of creating this application and hope that users are able to enjoy it as much as I do. Thank you to the REACH team for assigning such an awesome coding challenge!
 
 ## Features
 * 4 Levels of Difficulty (Easy, Normal, Hard, Bananas)
@@ -52,6 +52,8 @@ After cloning the repo, please cd into each directory and follow the directions 
 
 #### Playing Locally
 In the client directory, please run `npm install && npm start` to start the server. In a browser, navigate to `http://localhost:3000/` to begin. (Note: you may be using a different port number. Please update accordingly)
+
+Please start a PostgreSQL server on your computer prior to running the database commands below. PostgreSQL can be downloaded [here](https://www.postgresql.org/). If Homebrew is installed, you can run `brew install postgresql`.
 
 In the server directory, run `bundle install` to install dependencies. Run `rake db:create` to create the database, then `rake db:migrate` to migrate local database. To start the application on your machine, run `rails s -p 3001` (Note: you may be using a different port number. Please update accordingly).
 
