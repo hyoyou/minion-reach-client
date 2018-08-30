@@ -1,20 +1,15 @@
 import React, { Component } from 'react';
 
-const display = {
-    display: 'block'
-};
-
-const hide = {
-    display: 'none'
-};
-
-const winImg = 'https://s3.amazonaws.com/minionreach/BadMinions.png';
-const loseImg = 'https://s3.amazonaws.com/minionreach/MinionWin.png';
-
 export default class Modal extends Component {
     render() {
-        let winMessage = "Great work! The minions will be back though. They aren't ones to give up easily..";
-        let lossMessage = "Better luck next time! The minions ate all the bananas :( ...but look how happy they are! Awww!!!";
+        const display = { display: 'block' };
+        const hide = { display: 'none' };
+        
+        const winImg = 'https://s3.amazonaws.com/minionreach/BadMinions.png';
+        const loseImg = 'https://s3.amazonaws.com/minionreach/MinionWin.png';
+
+        const winMessage = "Great work! The minions will be back though. They aren't ones to give up easily..";
+        const lossMessage = "Better luck next time! The minions ate all the bananas :( ...but look how happy they are! Awww!!!";
 
         return (
             <div className="modal-overlay" style={this.props.toggle ? display : hide}>

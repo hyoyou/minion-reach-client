@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Game from './Game';
-import Minions from './Minions';
-import Modal from './Modal';
+import Game from '../components/Game';
+import Minions from '../components/Minions';
+import Modal from '../components/Modal';
 
 import { fetchWord } from '../actions/wordsActions';
 import { findUser, updateScore } from '../actions/sessionActions';
