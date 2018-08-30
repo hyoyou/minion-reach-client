@@ -17,7 +17,7 @@ const updateUserSuccess = (user) => {
 
 export const loginUser = (credentials) => {
     return dispatch => {
-        return fetch('http://localhost:3001/api/login', {
+        return fetch('https://minion-reach-server.herokuapp.com/api/login', {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json'
@@ -40,7 +40,7 @@ export const loginUser = (credentials) => {
 
 export const signupUser = (userInfo) => {
     return dispatch => {
-        return fetch('http://localhost:3001/api/signup', {
+        return fetch('https://minion-reach-server.herokuapp.com/api/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -64,7 +64,7 @@ export const signupUser = (userInfo) => {
 // Send JWT token to server to find the correct user and dispatch loadUser with data returned
 export const findUser = (token) => {
     return dispatch => {
-        return fetch('http://localhost:3001/api/find', {
+        return fetch('https://minion-reach-server.herokuapp.com/api/find', {
             method: 'POST',
             headers: {
             'Authorization': token,
@@ -83,7 +83,7 @@ export const findUser = (token) => {
 // When server sends back information about the user, dispatch action to set user data in reducer
 export const loadUser = (userId) => {
     return dispatch => {
-        return fetch(`http://localhost:3001/api/users/${userId}`, {
+        return fetch(`https://minion-reach-server.herokuapp.com/api/users/${userId}`, {
             method: 'GET'
         })
         .then(response => response.json())
@@ -96,7 +96,7 @@ export const loadUser = (userId) => {
 
 export const updateScore = (score, user) => {
     return dispatch => {
-        return fetch(`http://localhost:3001/api/users/${user.id}`, {
+        return fetch(`https://minion-reach-server.herokuapp.com/api/users/${user.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

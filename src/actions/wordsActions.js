@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch';
 import * as types from '../actions/actionTypes';
 
-const APIURL = `http://localhost:3001/api/words`;
+const APIURL = `https://minion-reach-server.herokuapp.com/api/words`;
 
 export const fetchWord = (difficulty) => {
     return function(dispatch) {
