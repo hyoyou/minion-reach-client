@@ -7,6 +7,8 @@ import NavBarSession from './NavBarSession';
 
 class Header extends Component {
     render() {
+        let { session } = this.props;
+        
         return (
             <header className="App-header">
                 <h1 className="App-title">
@@ -15,7 +17,7 @@ class Header extends Component {
                         <span className="reach">/REACH/</span>
                     </NavLink>
                 </h1>
-                { this.props.session ? <NavBarSession /> : <NavBar /> }
+                { session ? <NavBarSession /> : <NavBar /> }
             </header>
         )
     }
