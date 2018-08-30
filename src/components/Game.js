@@ -7,7 +7,8 @@ export default class Game extends Component {
     }
 
     render() {
-        let { wrongGuesses, gameState } = this.props;
+        let { alphabet } = this.state;
+        let { wrongGuesses, gameState, checkGuess, restart, lives, difficulty, user } = this.props;
    
         return (
             <div className="game">
@@ -15,29 +16,37 @@ export default class Game extends Component {
                 <div className="game-board">
                     <div className="game-stats">
                         <span className="replay-game">
-                            <button onClick={this.props.restart}>&#8634; New Game</button>
+                            <button onClick={restart}>&#8634; New Game</button>
                         </span>
-                        <span className="lives-left">Lives Left: {this.props.lives}</span>
+                        <span className="lives-left">Lives Left: {lives}</span>
                     </div>
                     <div className="game-guess">
                         PASSCODE:
-                        <div className={this.props.lives !== 0 ? "passcode" : "passcode-miss"}>
+                        <div className={lives !== 0 ? "passcode" : "passcode-miss"}>
                             {gameState.length > 1 && gameState.join(' ')}
                         </div>
                         <br />
                         <ul className="keyboard">
-                            {this.state.alphabet.map((letter, id) =>
-                                <li key={id}><button type="button" className={`btn btn-${wrongGuesses.includes(letter) || gameState.includes(letter) ? "secondary" : "primary"}`} onClick={(event) => this.props.checkGuess(event.target.innerText)}>{letter}</button></li>
+                            {alphabet.map((letter, id) =>
+                                <li key={id}>
+                                    <button 
+                                        type="button" 
+                                        className={`btn btn-${wrongGuesses.includes(letter) || gameState.includes(letter) ? "secondary" : "primary"}`} 
+                                        onClick={(event) => checkGuess(event.target.innerText)}
+                                    >
+                                    {letter}
+                                    </button>
+                                </li>
                             )}
                         </ul>
                     </div>
                 </div>
                 <div className="difficulty">
-                    difficulty: {this.props.difficulty} <NavLink to='/'>change?</NavLink>
+                    difficulty: {difficulty} <NavLink to='/'>change?</NavLink>
                 </div>
-                { this.props.user.id &&
+                { user.id &&
                     <div className="user-score">
-                        your score: {this.props.user.score}
+                        your score: {user.score}
                     </div>
                 }
             </div>
