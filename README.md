@@ -4,7 +4,7 @@
 
 <hr />
 
-_This is a word guessing game created with React.js and Ruby on Rails and has been tested on a Google Chrome browser_
+_This is a word guessing game created with React.js and Ruby on Rails and has been tested on a Google Chrome browser. This game is experienced best at or above a width of 1000px_
 
 ## Demo
 
@@ -14,7 +14,7 @@ _This is a word guessing game created with React.js and Ruby on Rails and has be
 
 * 4 Levels of Difficulty (Easy, Normal, Hard, Bananas)
 * Leaderboard Displaying Top 10 Players (Only users who are logged in will be able to save scores)
-    * Scores Based on Level Completed
+    * Scores are awarded based on level completed
         * Easy &rarr; +10 points
         * Normal &rarr; +30 points
         * Hard &rarr; +50 points
@@ -28,8 +28,11 @@ Please cd into the client directory and server directory in two different termin
 #### Cloning from GitHub
 
 Please clone both client and server repositories.
+
 The client repository can be found at: [Minion Reach Client](https://github.com/hyoyou/minion-reach-client)
+
 The server repository can be found at: [Minion Reach Server](https://github.com/hyoyou/minion-reach-api)
+
 After cloning the repo, please cd into each directory and follow the directions below to run locally.
 
 #### Playing Locally
