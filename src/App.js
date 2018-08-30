@@ -13,12 +13,14 @@ import Signup from './containers/Signup';
 
 class App extends Component {
     render() {
+        const { error } = this.props;
+
         return (
             <div className="App">
                 <BrowserRouter>
                     <div>
                         <Header />
-                        { this.props.error ? <p className="page-error">{ this.props.error }</p> : '' }
+                        { error ? <p className="page-error">{ error }</p> : '' }
                         <Switch>
                             <Route exact path='/' component={Intro} />
                             <Route exact path='/play' component={GameContainer} />
@@ -34,7 +36,7 @@ class App extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
     return {
         error: state.error.error
     }

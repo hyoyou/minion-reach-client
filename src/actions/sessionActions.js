@@ -61,6 +61,7 @@ export const signupUser = (userInfo) => {
     }
 }
 
+// Send JWT token to server to find the correct user and dispatch loadUser with data returned
 export const findUser = (token) => {
     return dispatch => {
         return fetch('http://localhost:3001/api/find', {
@@ -79,6 +80,7 @@ export const findUser = (token) => {
     }
 }
 
+// When server sends back information about the user, dispatch action to set user data in reducer
 export const loadUser = (userId) => {
     return dispatch => {
         return fetch(`http://localhost:3001/api/users/${userId}`, {

@@ -4,12 +4,15 @@ import { connect } from 'react-redux';
 import { setDifficulty } from '../actions/wordsActions';
 
 class Intro extends Component {
+    // Navigate to game play page when "Start Game" button is clicked
     gameStart = event => {
+        const { history } = this.props;
         event.preventDefault();
 
-        this.props.history.push('/play');
+        history.push('/play');
     }
 
+    // Call setDifficulty action creator to change difficulty level of game in application state
     changeDifficulty = event => {
         const { setDifficulty } = this.props;
 

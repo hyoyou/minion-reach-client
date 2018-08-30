@@ -4,9 +4,9 @@ import { Redirect, withRouter } from 'react-router-dom';
 import { logout } from '../actions/sessionActions';
 
 class Logout extends Component {
+    // Redirect to game play page upon logout
     onLogout = event => {
         const { logout, history } = this.props;
-
         event.preventDefault();
 
         logout();

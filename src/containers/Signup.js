@@ -13,9 +13,9 @@ class SignUp extends Component {
         this.setState({ [name]: value })
     }
 
+	// Sign up user then navigate to game play page
 	onSignup = event => {
 		const { signupUser, user, history } = this.props;
-
 		event.preventDefault();
 
 		signupUser(this.state);
@@ -27,11 +27,12 @@ class SignUp extends Component {
 
 	render() {
 		const { username, password } = this.state;
-		const { user } = this.props;
+		// const { user } = this.props;
 
-		if (user.id) {
-			return <Redirect to='/play' />;
-		}
+		// // If user is already signed in, redirect to game play page
+		// if (user.id) {
+		// 	return <Redirect to='/play' />;
+		// }
 
 		return (
 			<div className="user-container">

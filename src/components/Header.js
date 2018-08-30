@@ -17,6 +17,7 @@ class Header extends Component {
                         <span className="reach">/REACH/</span>
                     </NavLink>
                 </h1>
+                {/* Display navbar according to whether user has logged in or not */}
                 { session ? <NavBarSession /> : <NavBar /> }
             </header>
         );

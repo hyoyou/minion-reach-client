@@ -31,6 +31,7 @@ export default class Game extends Component {
                         <ul className="keyboard">
                             {alphabet.map((letter, id) =>
                                 <li key={id}>
+                                    {/* Change color of keyboard for letters that have already been guessed */}
                                     <button 
                                         type="button" 
                                         className={`btn btn-${wrongGuesses.includes(letter) || gameState.includes(letter) ? "secondary" : "primary"}`} 

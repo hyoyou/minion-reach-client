@@ -7,6 +7,7 @@ export default class Leaderboard extends Component {
         users: []
     }
 
+    // Fetch leaderboard data from API, save to React state
     componentDidMount() {
         fetch('http://localhost:3001/api/users/leaderboard')
             .then(response => response.json())

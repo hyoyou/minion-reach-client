@@ -13,9 +13,9 @@ class Login extends Component {
         this.setState({ [name]: value })
     }
 
+    // Log in user then navigate to game play page
     onLogin = event => {
         const { loginUser, user, history } = this.props;
-        
         event.preventDefault();
 
         loginUser(this.state);
@@ -27,11 +27,12 @@ class Login extends Component {
 
     render() {
         const { username, password } = this.state;
-        const { user } = this.props;
+        // const { user } = this.props;
 
-        if (user.id) {
-            return <Redirect push to='/play' />;
-        }
+        // // If user is already signed in, redirect to game play page
+        // if (user.id) {
+        //     return <Redirect push to='/play' />;
+        // }
         
         return (
             <div className="user-container">
