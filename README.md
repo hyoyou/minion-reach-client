@@ -4,7 +4,7 @@ BELLOOO!! I mean.. Hello! Welcome to Minion Reach, a ~~word guessing game~~ chal
 
 <hr />
 
-_This is a word guessing game created with React and Ruby on Rails that I created in consideration for an apprenticeship opportunity_
+_This is a word guessing game created with React and Ruby on Rails_
 
 ## Getting Started
 
