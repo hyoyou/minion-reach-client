@@ -11,11 +11,11 @@ _This is a word guessing game created with React.js and Ruby on Rails and has be
 [Minion Reach Demo](https://minion-reach.herokuapp.com/)
 
 ## Planning Out
-My first step was to figure out how to recreate a childhood game I so often played on chalkboard and paper into an interactive web app and provide the a similar experience. The rules of a word-guessing game (aka Hangman) are pretty straightforward. Two players are involved, in which player 1 has a secret word in mind and player 2 is given a finite number of chances to guess the word to completion.
+My first step was to figure out how to recreate a childhood game I so often played on chalkboard and paper into an interactive web app and provide a similar experience. The rules of a word-guessing game (aka Hangman) are pretty straightforward. Two players are involved, in which player 1 has a secret word in mind and player 2 is given a finite number of chances to guess the word to completion.
 
 In order to display the secret word, I chose to use underscores '_' just like in the games we play by hand. The object holding the secret word needed to be easily manipulated and accessible at certain indices, which naturally led to using arrays as the data structure to hold the secret word.
 
-Once I figured that a word like "minion" would be represented as ['_', '_', '_', '_', '_', '_',], I needed to figure out how I would update each index when the user guessed the correct letter, and then compare that to the secret word (string) that is saved in Redux state. There were a few edge cases to consider:
+Once I figured that a word like "minion" would be represented as ['\_', '\_', '\_', '\_', '\_', '\_',], I needed to figure out how I would update each index when the user guessed the correct letter, and then compare that to the secret word (a string) that is saved in Redux state. There were a few edge cases to consider:
 * How do I make sure that a single input of 1 letter made sure to replace *all* occurrences of the letter in the word and not just the first one it finds?
 * Since the user could input via keyboard, how do I handle lowercased and uppercased letters?
 * How do I make sure that punctuation and other keys that are not in the alphabet are not detected as inputs?
@@ -73,7 +73,7 @@ The user is given an option to choose a difficulty on the home page, which is sa
 #### Server Side
 ![Server Set Up](ServerDesign.jpg)
 
-The back-end of this application is set up using Ruby on Rails. I had initially planned to implement a server to manage users, but also ended up making calls to the external API from the server due to CORS issues from trying to fetch from the front-end. I have never tried this set up before of making a controller whose purpose is to only make calls to another API, so I had to give it some thought and try planning it out, as shown in the diagram above. I feel like making a call to the API from the server to pass on back to the client feels like an extra step, and I would love to find out how to implement this better in later versions of this application.
+The back-end of this application is set up using Ruby on Rails. I had initially planned to implement a server to manage users, but also ended up making calls to the external API from the server due to CORS issues trying to fetch from the client-side. I have never tried this set up before of making a controller whose purpose is to only make calls to another API, so I had to give it some thought and try planning it out, as shown in the diagram above. I feel like making a call to the API from the server to pass on back to the client feels like an extra step, and I would love to find out how to implement this better in later versions of this application.
 
 The user authentication between the Rails server and React client is completed using JSON Web Token(JWT). Upon successful creation (sign up) of a user, the server sends back a token to the client, and this token must be included in the header for future communications with the server regarding any action that needs authentication.
 
