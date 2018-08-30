@@ -179,6 +179,12 @@ footer img {
   font-size: 1.5em;
 }
 
+.wrong-guess {
+  font-size: 0.5em;
+  float: left;
+  margin-left: 10px;
+}
+
 .replay-game {
   float: left;
 }

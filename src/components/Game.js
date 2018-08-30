@@ -27,7 +27,10 @@ export default class Game extends Component {
                         <div className={lives !== 0 ? "passcode" : "passcode-miss"}>
                             {gameState.length > 1 && gameState.join(' ')}
                         </div>
+                        
+                        <div className="wrong-guess">Wrong Guesses: {wrongGuesses.join(', ')}</div>
                         <br />
+                        
                         <ul className="keyboard">
                             {alphabet.map((letter, id) =>
                                 <li key={id}>
