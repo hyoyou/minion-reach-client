@@ -11,10 +11,14 @@ class Intro extends Component {
     }
 
     changeDifficulty = event => {
-        this.props.setDifficulty(event.target.value);
+        const { setDifficulty } = this.props;
+
+        setDifficulty(event.target.value);
     }
 
     render() {
+        const { difficulty } = this.props;
+
         return (
             <div className="intro-container">
                 <div className="intro">
@@ -24,7 +28,7 @@ class Intro extends Component {
                         <button 
                             type="button" 
                             value="easy"
-                            className={this.props.difficulty === "easy" ? "level btn btn-primary" : "level btn btn-warning"} 
+                            className={difficulty === "easy" ? "level btn btn-primary" : "level btn btn-warning"} 
                             onClick={this.changeDifficulty}
                         >
                             easy
@@ -32,7 +36,7 @@ class Intro extends Component {
                         <button 
                             type="button"
                             value="normal"
-                            className={this.props.difficulty === "normal" ? "level btn btn-primary" : "level btn btn-warning"} 
+                            className={difficulty === "normal" ? "level btn btn-primary" : "level btn btn-warning"} 
                             onClick={this.changeDifficulty}
                         >
                             normal
@@ -40,7 +44,7 @@ class Intro extends Component {
                         <button 
                             type="button"
                             value="hard"
-                            className={this.props.difficulty === "hard" ? "level btn btn-primary" : "level btn btn-warning"} 
+                            className={difficulty === "hard" ? "level btn btn-primary" : "level btn btn-warning"} 
                             onClick={this.changeDifficulty}
                         >
                             hard
@@ -48,7 +52,7 @@ class Intro extends Component {
                         <button 
                             type="button"
                             value="bananas"
-                            className={this.props.difficulty === "bananas" ? "level btn btn-primary" : "level btn btn-warning"} 
+                            className={difficulty === "bananas" ? "level btn btn-primary" : "level btn btn-warning"} 
                             onClick={this.changeDifficulty}
                         >
                             bananas
@@ -57,7 +61,7 @@ class Intro extends Component {
                     <img src="https://s3.amazonaws.com/minionreach/MinionLovesBananas.jpg" alt="Minions love bananas" />
                 </div>
             </div>
-        )
+        );
     }
 }
 

@@ -27,7 +27,7 @@ const LeaderboardTable = ({ users }) => {
             }
             <NavLink to='/play' className="game-link">Play a Game</NavLink>
         </div>
-    )
+    );
 }
 
 export default LeaderboardTable

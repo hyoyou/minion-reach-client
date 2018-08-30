@@ -7,7 +7,7 @@ import NavBarSession from './NavBarSession';
 
 class Header extends Component {
     render() {
-        let { session } = this.props;
+        const { session } = this.props;
         
         return (
             <header className="App-header">
@@ -19,7 +19,7 @@ class Header extends Component {
                 </h1>
                 { session ? <NavBarSession /> : <NavBar /> }
             </header>
-        )
+        );
     }
 }
 

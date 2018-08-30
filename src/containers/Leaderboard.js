@@ -17,8 +17,8 @@ export default class Leaderboard extends Component {
     }
 
     render() {
-        return (
-            <LeaderboardTable users={this.state.users} />
-        )
+        const { users } = this.state;
+
+        return  <LeaderboardTable users={users} />;
     }
 }

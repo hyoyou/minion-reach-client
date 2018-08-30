@@ -7,12 +7,14 @@ export default class Game extends Component {
     }
 
     render() {
-        let { alphabet } = this.state;
-        let { wrongGuesses, gameState, checkGuess, restart, lives, difficulty, user } = this.props;
+        const { alphabet } = this.state;
+        const { wrongGuesses, gameState, checkGuess, restart, lives, difficulty, user } = this.props;
    
         return (
             <div className="game">
-                <p className="directions"><span className="red-underline">YOUR MISSION:</span> The minions locked us out of our banana farm! It only takes 6 minions to /REACH/ the bananas. Decipher the code to stop them!</p>
+                <p className="directions">
+                    <span className="red-underline">YOUR MISSION:</span> The minions locked us out of our banana farm! It only takes 6 minions to /REACH/ the bananas. Decipher the code to stop them!
+                </p>
                 <div className="game-board">
                     <div className="game-stats">
                         <span className="replay-game">
@@ -34,7 +36,7 @@ export default class Game extends Component {
                                         className={`btn btn-${wrongGuesses.includes(letter) || gameState.includes(letter) ? "secondary" : "primary"}`} 
                                         onClick={(event) => checkGuess(event.target.innerText)}
                                     >
-                                    {letter}
+                                        {letter}
                                     </button>
                                 </li>
                             )}
@@ -50,6 +52,6 @@ export default class Game extends Component {
                     </div>
                 }
             </div>
-        )
+        );
     }
 }

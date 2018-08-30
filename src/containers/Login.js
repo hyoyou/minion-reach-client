@@ -9,63 +9,64 @@ class Login extends Component {
         password: ''
     };
 
-    onInput = event => {
-        this.setState({
-            [event.target.name]: event.target.value
-        })
+    onInput = ({ target: { name, value } }) => {
+        this.setState({ [name]: value })
     }
 
     onLogin = event => {
+        const { loginUser, user, history } = this.props;
+        
         event.preventDefault();
 
-        this.props.loginUser(this.state)
+        loginUser(this.state);
 
-        if (this.props.user.id) {
-            this.props.history.push('/play');
+        if (user.id) {
+            history.push('/play');
         }
     }
 
     render() {
-        if (this.props.user.id) {
-            return (
-                <Redirect push to="/play" />
-            )
-        } else {
-            return (
-                <div className="user-container">
-                    <h2>Log In</h2>
-                    <form>
-                        <label className="col-sm-2 col-form-label" htmlFor="username">Username</label>
-                        <input
-                            type="text"
-                            id="username"
-                            name="username"
-                            placeholder="Username"
-                            value={this.state.username}
-                            onChange={(event) => this.onInput(event)}
-                        />
-                        <br />
+        const { username, password } = this.state;
+        const { user } = this.props;
 
-                        <label className="col-sm-2 col-form-label" htmlFor="password">Password</label>
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            placeholder="Password"
-                            value={this.state.password}
-                            onChange={(event) => this.onInput(event)}
-                        />
-                        <br />
-
-                        <button type="submit" className="btn btn-primary btn-margin" onClick={this.onLogin}>Log In</button>
-                    </form>
-                </div>
-            )
+        if (user.id) {
+            return <Redirect push to='/play' />;
         }
+        
+        return (
+            <div className="user-container">
+                <h2>Log In</h2>
+                <form>
+                    <label className="col-sm-2 col-form-label" htmlFor="username">Username</label>
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Username"
+                        value={username}
+                        onChange={(event) => this.onInput(event)}
+                    />
+                    <br />
+
+                    <label className="col-sm-2 col-form-label" htmlFor="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(event) => this.onInput(event)}
+                    />
+                    <br />
+
+                    <button type="submit" className="btn btn-primary btn-margin" onClick={this.onLogin}>Log In</button>
+                </form>
+            </div>
+        );
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
     return {
         user: state.session.user
     }

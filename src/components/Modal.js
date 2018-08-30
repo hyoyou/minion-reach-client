@@ -11,14 +11,16 @@ export default class Modal extends Component {
         const winMessage = "Great work! The minions will be back though. They aren't ones to give up easily..";
         const lossMessage = "Better luck next time! The minions ate all the bananas :( ...but look how happy they are! Awww!!!";
 
+        const { toggle, win, restart, toggleModal } = this.props;
+
         return (
-            <div className="modal-overlay" style={this.props.toggle ? display : hide}>
+            <div className="modal-overlay" style={toggle ? display : hide}>
                 <div className="modal-content">
-                    <a className="btn-close" onClick={(event) => this.props.toggleModal(event)}>X</a>
-                    <h4 className="mission-state">MISSION: {this.props.win ? <span className="blue-underline">CLEARED</span> : <span className="red-underline">FAILED</span>}</h4>
-                    <img className='game-over-img' src={this.props.win ? winImg : loseImg} alt='minions win or lose' />
-                    <p>{this.props.win ? winMessage : lossMessage}</p>
-                    <button className="replay btn btn-primary" onClick={this.props.restart}>Play Again</button>
+                    <a className="btn-close" onClick={(event) => toggleModal(event)}>X</a>
+                    <h4 className="mission-state">MISSION: {win ? <span className="blue-underline">CLEARED</span> : <span className="red-underline">FAILED</span>}</h4>
+                    <img className='game-over-img' src={win ? winImg : loseImg} alt='minions win or lose' />
+                    <p>{win ? winMessage : lossMessage}</p>
+                    <button className="replay btn btn-primary" onClick={restart}>Play Again</button>
                 </div>
             </div>
         );

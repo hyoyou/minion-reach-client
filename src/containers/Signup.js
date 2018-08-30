@@ -9,27 +9,28 @@ class SignUp extends Component {
 		password: ''
 	};
 
-	onInput = (event) => {
-		this.setState({
-			[event.target.name]: event.target.value
-		})
-	}
+	onInput = ({ target: { name, value } }) => {
+        this.setState({ [name]: value })
+    }
 
 	onSignup = event => {
+		const { signupUser, user, history } = this.props;
+
 		event.preventDefault();
 
-		this.props.signupUser(this.state)
+		signupUser(this.state);
 		
-		if (this.props.user.id) {
-            this.props.history.push('/play');
+		if (user.id) {
+            history.push('/play');
         }
 	}
 
 	render() {
-		if (this.props.user.id) {
-			return (
-				<Redirect to='/play' />
-			)
+		const { username, password } = this.state;
+		const { user } = this.props;
+
+		if (user.id) {
+			return <Redirect to='/play' />;
 		}
 
 		return (
@@ -42,7 +43,7 @@ class SignUp extends Component {
 						id="username"
 						name="username"
 						placeholder="Username"
-						value={this.state.username}
+						value={username}
 						onChange={(event) => this.onInput(event)}
 					/>
 					<br />
@@ -53,7 +54,7 @@ class SignUp extends Component {
 						id="password"
 						name="password"
 						placeholder="Password"
-						value={this.state.password}
+						value={password}
 						onChange={(event) => this.onInput(event)}
 					/>
 					<br />
@@ -61,11 +62,11 @@ class SignUp extends Component {
 					<button type="submit" className="btn btn-primary btn-margin" onClick={this.onSignup}>Sign Up</button>
 				</form>
 			</div>
-		)
+		);
 	}
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
 	return {
 		user: state.session.user
 	}

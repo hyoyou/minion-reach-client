@@ -64,7 +64,7 @@ export default class Minions extends Component {
                     </div>
                 );
             default:
-                return (<div>HI</div>);
+                return <div></div>;
         }
     }
 
@@ -73,6 +73,6 @@ export default class Minions extends Component {
             <div className='minions-container'>
                 { this.stackMinions() }
             </div>
-        )
+        );
     }
 }
