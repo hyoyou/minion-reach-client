@@ -29,11 +29,12 @@ class GameContainer extends Component {
     }
 
     startGame = () => {	
-        let gameStart = [];	
+        let gameStart = [];
         for (let i = 0; i < this.props.word.length; i++) {	
             gameStart.push('_');	
         }	
-         this.setState({	
+        
+        this.setState({	
             gameState: gameStart	
         })
     }
@@ -62,7 +63,7 @@ class GameContainer extends Component {
     checkGuess = (key) => {
         let updatedGameState = this.state.gameState;
 
-        if (!this.state.win && this.state.wrongGuesses.indexOf(key) < 0) {
+        if (this.state.win && this.state.wrongGuesses.indexOf(key) < 0) {
             if (this.props.word.indexOf(key) > -1) {
                 let indices = [];
                 let index = this.props.word.indexOf(key);
