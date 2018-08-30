@@ -54,7 +54,7 @@ class Intro extends Component {
                             bananas
                         </button>
                     </div>
-                    <img src="https://imgur.com/x9ltqQC.jpg" alt="Minions love bananas" />
+                    <img src="https://s3.amazonaws.com/minionreach/MinionLovesBananas.jpg" alt="Minions love bananas" />
                 </div>
             </div>
         )

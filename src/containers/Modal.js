@@ -8,8 +8,8 @@ const hide = {
     display: 'none'
 };
 
-const winImg = 'https://imgur.com/lIgomDF.png';
-const loseImg = 'https://imgur.com/s93T23V.png';
+const winImg = 'https://s3.amazonaws.com/minionreach/BadMinions.png';
+const loseImg = 'https://s3.amazonaws.com/minionreach/MinionWin.png';
 
 export default class Modal extends Component {
     render() {

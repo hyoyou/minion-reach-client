@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 
 export default class Minions extends Component {
     stackMinions = () => {
-        let minion6 = 'https://imgur.com/MP4tcmz.png';
-        let minion5 = 'https://imgur.com/mieOImG.png';
-        let minion4 = 'https://imgur.com/m68M2Pm.png';
-        let minion3 = 'https://imgur.com/H3O04L6.png';
-        let minion2 = 'https://imgur.com/2HfRHoC.png';
-        let minion1 = 'https://imgur.com/DsCkDGy.png';
-        // let minionWin = 'https://imgur.com/gSFNcwK';
+        let minion6 = 'https://s3.amazonaws.com/minionreach/MinionFinal.png';
+        let minion5 = 'https://s3.amazonaws.com/minionreach/Minion1.png';
+        let minion4 = 'https://s3.amazonaws.com/minionreach/Minion3.png';
+        let minion3 = 'https://s3.amazonaws.com/minionreach/Minion4.png';
+        let minion2 = 'https://s3.amazonaws.com/minionreach/Minion5.png';
+        let minion1 = 'https://s3.amazonaws.com/minionreach/Minion2.png';
 
         switch (this.props.lives) {
             case 6:

@@ -47,7 +47,7 @@ footer img {
 /* ================ Sign Up, Log In, Log Out ================ */
 
 .user-container {
-  background-image: url(https://imgur.com/Cq5egiJ.png);
+  background-image: url(https://s3.amazonaws.com/minionreach/6Minions.png);
   background-repeat: no-repeat;
   background-size: 300px;
   background-position: bottom;
@@ -223,7 +223,7 @@ footer img {
 /* ================ Minions Container ================ */
 
 .minions-container {
-  background-image: url(./images/BananaTree.jpg);
+  background-image: url(https://s3.amazonaws.com/minionreach/BananaTree.jpg);
   background-repeat: no-repeat;
   background-size: 270px 470px;
   background-position: bottom;
