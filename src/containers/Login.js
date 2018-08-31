@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Redirect, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { loginUser } from '../actions/sessionActions';
 
 class Login extends Component {
@@ -27,12 +27,6 @@ class Login extends Component {
 
     render() {
         const { username, password } = this.state;
-        // const { user } = this.props;
-
-        // // If user is already signed in, redirect to game play page
-        // if (user.id) {
-        //     return <Redirect push to='/play' />;
-        // }
         
         return (
             <div className="user-container">
