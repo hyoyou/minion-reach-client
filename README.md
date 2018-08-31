@@ -1,5 +1,5 @@
 # Minion /REACH/
-**BELLOOO!!** I mean.. Hello! Welcome to Minion Reach, a ~~word guessing game~~ challenging mission in which you are asked to deciper the codes set up by minions in order to save a banana farm from being consumed wholly by minions. Each mistake allows a minion to sneakily enter the farm, and the mission will be over when 6 minions are able to enter. It won't be easy! The minions have a very extensive vocabulary. Are you up for the challenge? :bowtie:
+**BELLOOO!!** I mean.. Hello! Welcome to Minion Reach, a ~~word guessing game~~ challenging mission in which you are asked to deciper the codes set up by mischievous minions. Minions really love bananas and they locked us out of our own farm! Guess the correct code to get in and get them out of the banana farm before it's too late. Each mistake allows a minion to sneakily enter the farm, and the mission will be over when 6 minions are able to enter. It won't be easy! The minions have a very extensive vocabulary. Are you up for the challenge? :bowtie:
 
 <hr />
 
@@ -78,7 +78,6 @@ The back-end of this application is set up using Ruby on Rails. I had initially 
 The user authentication between the Rails server and React client is completed using JSON Web Token(JWT). Upon successful creation (sign up) of a user, the server sends back a token to the client, and this token must be included in the header for future communications with the server regarding any action that needs authentication.
 
 ## Further Versions
-
 The current version is lacking in responsive design and assessibility(a11y). In future versions, I would like to improve upon thesexw design features to make the application available to a wider range of users and on different devices.
 
 ## Contributing
