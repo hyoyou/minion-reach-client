@@ -77,6 +77,10 @@ The back-end of this application is set up using Ruby on Rails. I had initially 
 
 The user authentication between the Rails server and React client is completed using JSON Web Token(JWT). Upon successful creation (sign up) of a user, the server sends back a token to the client, and this token must be included in the header for future communications with the server regarding any action that needs authentication.
 
+## Further Versions
+
+The current version is lacking in responsive design and assessibility(a11y). In future versions, I would like to improve upon thesexw design features to make the application available to a wider range of users and on different devices.
+
 ## Contributing
 Bug reports and pull requests are welcome on GitHub at https://github.com/hyoyou/minion-reach-client. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
