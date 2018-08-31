@@ -1,5 +1,5 @@
 # Minion /REACH/
-**BELLOOO!!** I mean.. Hello! Welcome to Minion Reach, a ~~word guessing game~~ challenging mission in which you are asked to deciper the codes set up by mischievous minions. Minions really love bananas and they locked us out of our own farm! Guess the correct code to get in and get them out of the banana farm before it's too late. Each mistake allows a minion to sneakily enter the farm, and the mission will be over when 6 minions are able to enter. It won't be easy! The minions have a very extensive vocabulary. Are you up for the challenge? :bowtie:
+**BELLOOO!!** I mean.. Hello! Welcome to Minion Reach, a ~~word guessing game~~ challenging mission in which you are asked to decipher the codes set up by mischievous minions. Minions really love bananas and they locked us out of our own farm! Guess the correct code to get in and get them out of the banana farm before it's too late. Each mistake allows a minion to sneakily enter the farm, and the mission will be over when 6 minions are able to enter. It won't be easy! The minions have a very extensive vocabulary. Are you up for the challenge? :bowtie:
 
 <hr />
 
@@ -68,7 +68,7 @@ The front-end design has been implemented using React.js along with Redux to man
 * toggle, which is a boolean value that shows or hides the end of game modal
 * win, which is a boolean value indicates if the game is over or not
 
-The user is given an option to choose a difficulty on the home page, which is saved to application state so that the level chosen will be remembered thoughout the game even when the user navigates back and forth to other pages. When the "Start Game" button is pressed, they are directed to the game play page and a fetch request is made to the server upon page load, which requests the word list for the chosen difficulty from an external dictionary API and sends it back to the client. This word is saved in our application state, which is then accessed by component state to update its values. Further gameplay only updates the component state until the game is over and a logged in user has won, in which case an action will be dispatched so that the user's data is updated with the score. 
+The user is given an option to choose a difficulty on the home page, which is saved to application state so that the level chosen will be remembered throughout the game even when the user navigates back and forth to other pages. When the "Start Game" button is pressed, they are directed to the game play page and a fetch request is made to the server upon page load, which requests the word list for the chosen difficulty from an external dictionary API and sends it back to the client. This word is saved in our application state, which is then accessed by component state to update its values. Further gameplay only updates the component state until the game is over and a logged in user has won, in which case an action will be dispatched so that the user's data is updated with the score. 
 
 #### Server Side
 ![Server Set Up](https://s3.amazonaws.com/minionreach/ServerDesign.jpg)
@@ -78,7 +78,7 @@ The back-end of this application is set up using Ruby on Rails. I had initially 
 The user authentication between the Rails server and React client is completed using JSON Web Token(JWT). Upon successful creation (sign up) of a user, the server sends back a token to the client, and this token must be included in the header for future communications with the server regarding any action that needs authentication.
 
 ## Further Versions
-The current version is lacking in responsive design and assessibility(a11y). In future versions, I would like to improve upon thesexw design features to make the application available to a wider range of users and on different devices.
+The current version is lacking in responsive design and accessibility(a11y). In future versions, I would like to improve upon these design features to make the application available to a wider range of users and on different devices.
 
 ## Contributing
 Bug reports and pull requests are welcome on GitHub at https://github.com/hyoyou/minion-reach-client. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
