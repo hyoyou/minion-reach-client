@@ -6,9 +6,9 @@
 _This is a word guessing game created with React.js and Ruby on Rails and has been tested on a Google Chrome browser. This game is experienced best at or above a width of 1000px._
 
 ## Demo
-![Walkthrough of Game](Walkthrough.gif)
+![Walkthrough of Game](https://s3.amazonaws.com/minionreach/Walkthrough.gif)
 
-[Minion Reach Demo](https://minion-reach.herokuapp.com/)
+Live App: [Minion Reach Demo](https://minion-reach.herokuapp.com/)
 
 ## Planning Out
 My first step was to figure out how to recreate a childhood game I so often played on chalkboard and paper into an interactive web app and provide a similar experience. The rules of a word-guessing game (aka Hangman) are pretty straightforward. Two players are involved, in which player 1 has a secret word in mind and player 2 is given a finite number of chances to guess the word to completion.
@@ -71,7 +71,7 @@ The front-end design has been implemented using React.js along with Redux to man
 The user is given an option to choose a difficulty on the home page, which is saved to application state so that the level chosen will be remembered thoughout the game even when the user navigates back and forth to other pages. When the "Start Game" button is pressed, they are directed to the game play page and a fetch request is made to the server upon page load, which requests the word list for the chosen difficulty from an external dictionary API and sends it back to the client. This word is saved in our application state, which is then accessed by component state to update its values. Further gameplay only updates the component state until the game is over and a logged in user has won, in which case an action will be dispatched so that the user's data is updated with the score. 
 
 #### Server Side
-![Server Set Up](ServerDesign.jpg)
+![Server Set Up](https://s3.amazonaws.com/minionreach/ServerDesign.jpg)
 
 The back-end of this application is set up using Ruby on Rails. I had initially planned to implement a server to manage users, but also ended up making calls to the external API from the server due to CORS issues trying to fetch from the client-side. I have never tried this set up before of making a controller whose purpose is to only make calls to another API, so I had to give it some thought and try planning it out, as shown in the diagram above. I feel like making a call to the API from the server to pass on back to the client feels like an extra step, and I would love to find out how to implement this better in later versions of this application.
 
