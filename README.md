@@ -53,9 +53,9 @@ After cloning the repo, please cd into each directory and follow the directions 
 #### Playing Locally
 In the client directory, please run `npm install && npm start` to start the server. In a browser, navigate to `http://localhost:3000/` to begin. (Note: you may be using a different port number. Please update accordingly)
 
-Please start a PostgreSQL server on your computer prior to running the database commands below. PostgreSQL can be downloaded [here](https://www.postgresql.org/). If Homebrew is installed, you can run `brew install postgresql`.
+Please initialize a PostgreSQL server on your computer prior to running the database commands below. The easiest way to get started is with the Postgres.app, which can be downloaded [here](https://postgresapp.com/). If Homebrew is installed, you can run `brew install postgresql`.
 
-In the server directory, run `bundle install` to install dependencies. Run `rake db:create` to create the database, then `rake db:migrate` to migrate local database. To start the application on your machine, run `rails s -p 3001` (Note: you may be using a different port number. Please update accordingly).
+In the server directory, run `bundle install` to install dependencies. Run `rake db:create` to create the database, and then `rake db:migrate` to migrate local database. To start the application on your machine, run `rails s -p 3001` (Note: you may be using a different port number. Please update accordingly).
 
 When the server successfully runs, you should be able to ~play the game~ begin your mission at `http://localhost:3000/`. The default level of difficulty is set to 'normal'. 
 
