@@ -51,9 +51,15 @@ The server repository can be found at: [Minion Reach Server](https://github.com/
 After cloning the repo, please cd into each directory and follow the directions below to run locally.
 
 #### Playing Locally
+*Client - JavaScript*
+Please check that Node.js and NPM are installed by running `node -v` and `npm -v` in the Terminal. It should output a version number if it is installed. If you need to install Node.js, you can download it [here](https://nodejs.org/en/). If Homebrew is installed, you can run `brew install node`.
+
 In the client directory, please run `npm install && npm start` to start the server. In a browser, navigate to `http://localhost:3000/` to begin. (Note: you may be using a different port number. Please update accordingly)
 
-Please initialize a PostgreSQL server on your computer prior to running the database commands below. The easiest way to get started is with the Postgres.app, which can be downloaded [here](https://postgresapp.com/). If Homebrew is installed, you can run `brew install postgresql`.
+*Server - Ruby*
+Please check that Ruby is installed by running `ruby -v` in the Terminal. It should output a version number if it is installed. If you need to install Ruby, you can download it [here](https://www.ruby-lang.org/en/documentation/installation/). If Homebrew is installed, you can run `brew install ruby`.
+
+Please also initialize a PostgreSQL server on your computer prior to running the database commands below. To check that PostgreSQL is installed, run `psql -V` in the terminal to see if it outputs a version number. If PostreSQL is not installed, the easiest way to get started is with the Postgres.app, which can be downloaded [here](https://postgresapp.com/). If Homebrew is installed, you can run `brew install postgresql`. Please click on `initialize` in the Postgres.app or run `brew services start postgresql` to initialize the server.
 
 In the server directory, run `bundle install` to install dependencies. Run `rake db:create` to create the database, and then `rake db:migrate` to migrate local database. To start the application on your machine, run `rails s -p 3001` (Note: you may be using a different port number. Please update accordingly).
 
