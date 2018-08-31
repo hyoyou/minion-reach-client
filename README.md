@@ -6,7 +6,7 @@
 _This is a word guessing game created with React.js and Ruby on Rails and has been tested on a Google Chrome browser. This game is experienced best at or above a width of 1000px._
 
 ## Demo
-![Walkthrough of Game](https://s3.amazonaws.com/minionreach/Walkthrough.gif)
+![Walkthrough of Game](Walkthrough.gif)
 
 Live App: [Minion Reach Demo](https://minion-reach.herokuapp.com/)
 
