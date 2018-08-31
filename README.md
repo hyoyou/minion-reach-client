@@ -1,9 +1,9 @@
 # Minion /REACH/
-**BELLOOO!!** I mean.. Hello! Welcome to Minion Reach, a ~~word guessing game~~ challenging mission in which you are asked to decipher the codes set up by mischievous minions. Minions really love bananas and they locked us out of our own farm! Guess the correct code to get in and get them out of the banana farm before it's too late. Each mistake allows a minion to sneakily enter the farm, and the mission will be over when 6 minions are able to enter. It won't be easy! The minions have a very extensive vocabulary. Are you up for the challenge? :bowtie:
+**BELLOOO!!** I mean.. Hello! Welcome to Minion Reach, a ~~word guessing game~~ challenging mission in which you are asked to decipher the codes set up by mischievous minions. Minions really love bananas and they locked us out of our banana plantation! Guess the correct code to get in and get them out of the plantation before it's too late. Each mistake allows a minion to sneakily enter, and the mission will be over when 6 minions are able to enter and reach all the bananas. It won't be easy! The minions have a very extensive vocabulary. Are you up for the challenge? :bowtie:
 
 <hr />
 
-_This is a word guessing game created with React.js and Ruby on Rails and has been tested on a Google Chrome browser. This game is experienced best at or above a width of 1000px._
+_This is a word guessing game created with React.js and Ruby on Rails and has been tested on a Google Chrome browser. The game is currently best experienced at a screen width at or above 1000px, but responsive design will be implemented in future versions!_
 
 ## Demo
 ![Walkthrough of Game](Walkthrough.gif)
@@ -51,12 +51,14 @@ The server repository can be found at: [Minion Reach Server](https://github.com/
 After cloning the repo, please cd into each directory and follow the directions below to run locally.
 
 #### Playing Locally
-*Client - JavaScript*
+**Client - JavaScript**
+
 Please check that Node.js and NPM are installed by running `node -v` and `npm -v` in the Terminal. It should output a version number if it is installed. If you need to install Node.js, you can download it [here](https://nodejs.org/en/). If Homebrew is installed, you can run `brew install node`.
 
 In the client directory, please run `npm install && npm start` to start the server. In a browser, navigate to `http://localhost:3000/` to begin. (Note: you may be using a different port number. Please update accordingly)
 
-*Server - Ruby*
+**Server - Ruby**
+
 Please check that Ruby is installed by running `ruby -v` in the Terminal. It should output a version number if it is installed. If you need to install Ruby, you can download it [here](https://www.ruby-lang.org/en/documentation/installation/). If Homebrew is installed, you can run `brew install ruby`.
 
 Please also initialize a PostgreSQL server on your computer prior to running the database commands below. To check that PostgreSQL is installed, run `psql -V` in the terminal to see if it outputs a version number. If PostreSQL is not installed, the easiest way to get started is with the Postgres.app, which can be downloaded [here](https://postgresapp.com/). If Homebrew is installed, you can run `brew install postgresql`. Please click on `initialize` in the Postgres.app or run `brew services start postgresql` to initialize the server.
