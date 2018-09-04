@@ -10,11 +10,6 @@ export const fetchWord = (difficulty) => {
         .then(result => {
             let secretWord = result[Math.floor(Math.random()*result.length)];
             
-            let gameStart = [];
-            for (let i = 0; i < secretWord.length; i++) {
-                gameStart.push('_');
-            }
-
             dispatch({
                 type: types.FETCH_WORD,
                 payload: secretWord.toUpperCase()

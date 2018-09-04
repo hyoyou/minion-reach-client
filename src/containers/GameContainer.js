@@ -51,7 +51,7 @@ class GameContainer extends Component {
             lives: 6,
             toggle: false,
             win: false,
-        })
+        });
 
         fetchWord(difficulty).then(() => this.startGame());
     }
@@ -107,6 +107,7 @@ class GameContainer extends Component {
                     wrongGuesses: [...wrongGuesses, key],
                     lives: 0 
                 });
+
                 this.gameOver();
             }
         }
@@ -164,7 +165,7 @@ class GameContainer extends Component {
     toggleModal = () => {
         this.setState((prevState) => ({
             toggle: !prevState.toggle
-        }))
+        }));
     }
 
     render() {
