@@ -9,7 +9,7 @@ export default class Leaderboard extends Component {
 
     // Fetch leaderboard data from API, save to React state
     componentDidMount() {
-        fetch('http://localhost:3001/api/users/leaderboard')
+        fetch('https://minion-reach-server.herokuapp.com/api/users/leaderboard')
             .then(response => response.json())
             .then(result => {
                 this.setState({ users: result.users})
