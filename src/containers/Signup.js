@@ -19,20 +19,11 @@ class SignUp extends Component {
 		event.preventDefault();
 
 		signupUser(this.state);
-		
-		if (user.id) {
-            history.push('/play');
-        }
+		history.push('/play');
 	}
 
 	render() {
 		const { username, password } = this.state;
-		// const { user } = this.props;
-
-		// // If user is already signed in, redirect to game play page
-		// if (user.id) {
-		// 	return <Redirect to='/play' />;
-		// }
 
 		return (
 			<div className="user-container">
