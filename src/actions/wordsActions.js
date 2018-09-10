@@ -8,16 +8,11 @@ export const fetchWord = (difficulty) => {
         return fetch(`${APIURL}/${difficulty}`)
         .then(response => response.json())
         .then(result => {
-            let secretWord = result[Math.floor(Math.random()*result.length)];
+            let secretWord = result.toUpperCase();
             
-            let gameStart = [];
-            for (let i = 0; i < secretWord.length; i++) {
-                gameStart.push('_');
-            }
-
             dispatch({
                 type: types.FETCH_WORD,
-                payload: secretWord.toUpperCase()
+                payload: secretWord
             })
         })
     }
