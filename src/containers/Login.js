@@ -19,10 +19,7 @@ class Login extends Component {
         event.preventDefault();
 
         loginUser(this.state);
-
-        if (user.id) {
-            history.push('/play');
-        }
+        history.push('/play');
     }
 
     render() {

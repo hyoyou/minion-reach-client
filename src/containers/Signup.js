@@ -19,10 +19,7 @@ class SignUp extends Component {
 		event.preventDefault();
 
 		signupUser(this.state);
-		
-		if (user.id) {
-            history.push('/play');
-        }
+		history.push('/play');
 	}
 
 	render() {
