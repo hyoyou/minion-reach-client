@@ -6,7 +6,7 @@ const APIURL = `https://minion-reach-server.herokuapp.com/api/words`;
 export const fetchWord = (difficulty) => {
     return function(dispatch) {
         return fetch(`${APIURL}/${difficulty}`)
-        .then(response => response.json())
+        .then(response => response.text())
         .then(result => {
             let secretWord = result.toUpperCase();
             
