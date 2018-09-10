@@ -60,6 +60,14 @@ class Intro extends Component {
                         >
                             bananas
                         </button>
+                        <button 
+                            type="button"
+                            value="multiplayer"
+                            className={difficulty === "multiplayer" ? "level btn btn-primary" : "level btn btn-warning"} 
+                            onClick={this.changeDifficulty}
+                        >
+                            multiplayer
+                        </button>
                     </div>
                     <img src="https://s3.amazonaws.com/minionreach/MinionLovesBananas.jpg" alt="Minions love bananas" />
                 </div>
