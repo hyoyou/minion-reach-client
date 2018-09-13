@@ -85,8 +85,20 @@ The back-end of this application is set up using Ruby on Rails. I had initially 
 
 The user authentication between the Rails server and React client is completed using JSON Web Token(JWT). Upon successful creation (sign up) of a user, the server sends back a token to the client, and this token must be included in the header for future communications with the server regarding any action that needs authentication.
 
+## Currently Working On
+![Multiplayer](https://s3.amazonaws.com/minionreach/Multiplayer.jpeg)
+
+A 2 Player mode in which one player can come up with the secret word, and the other player needs to guess it. Playing in this mode does not update player's scores at this time.
+
 ## Further Versions
-The current version is lacking in responsive design and accessibility(a11y). In future versions, I would like to improve upon these design features to make the application available to a wider range of users and on different devices.
+
+Responsive design and accessibility(a11y). In future versions, I would like to improve upon these design features to make the application available to a wider range of users and on different devices.
+
+Code efficiency. Reduce unnecessary variable assignments and loops, as well as optimize performance and loading of images and code.
+
+Persisting user's game state. Allow a user to save mid-game, and continue to play it at a later time.
+
+Multiplayer mode. Allow logged in users to compete against each other instead of only being able to do it locally on the same computer as it currently stands.
 
 ## Contributing
 Bug reports and pull requests are welcome on GitHub at https://github.com/hyoyou/minion-reach-client. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
