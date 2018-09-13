@@ -1,5 +1,6 @@
 export const FETCH_WORD = 'FETCH_WORD';
 export const SET_DIFFICULTY = 'SET_DIFFICULTY';
+export const SET_WORD = 'SET_WORD';
 
 export const FIND_USER_SUCCESS = 'FIND_USER_SUCCESS';
 export const LOAD_USER_SUCCESS = 'LOAD_USER_SUCCESS';

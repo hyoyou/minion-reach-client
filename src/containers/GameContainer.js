@@ -4,8 +4,9 @@ import { connect } from 'react-redux';
 import Game from '../components/Game';
 import Minions from '../components/Minions';
 import Modal from '../components/Modal';
+import WordModal from './WordModal';
 
-import { fetchWord } from '../actions/wordsActions';
+import { fetchWord, setWord } from '../actions/wordsActions';
 import { findUser, updateScore } from '../actions/sessionActions';
 
 class GameContainer extends Component {
@@ -14,7 +15,8 @@ class GameContainer extends Component {
         wrongGuesses: [],
         lives: 6,
         toggle: false,
-        win: false
+        win: false,
+        wordToggle: false
     }
 
     // Call fetchWord action creator to set word in application state then call startGame()
@@ -23,7 +25,13 @@ class GameContainer extends Component {
         const { fetchWord, difficulty, findUser } = this.props;
         const token = localStorage.getItem('Token');
 
-        fetchWord(difficulty).then(() =>  this.startGame());
+        if (difficulty === "multiplayer") {
+            this.setState((prevState) => ({
+                wordToggle: !prevState.wordToggle
+            }));
+        } else {
+            fetchWord(difficulty).then(() =>  this.startGame());
+        }
 
         if (token) { findUser(token) };
     }
@@ -53,7 +61,13 @@ class GameContainer extends Component {
             win: false,
         });
 
-        fetchWord(difficulty).then(() => this.startGame());
+        if (difficulty === "multiplayer") {
+            this.setState((prevState) => ({
+                wordToggle: !prevState.wordToggle
+            }));
+        } else {
+            fetchWord(difficulty).then(() =>  this.startGame());
+        }
     }
 
     // When input is via keyboard, validate that it is an A-Z letter, capitalize, and send to checkGuess()
@@ -62,6 +76,13 @@ class GameContainer extends Component {
             let key = event.key.toUpperCase();
             this.checkGuess(key);
         } 
+    }
+
+    setWord = async word => {
+        const { setWord } = this.props;
+
+        await setWord(word)
+        this.startGame();
     }
 
     // Take in user's guess and check against secret word
@@ -168,12 +189,18 @@ class GameContainer extends Component {
         }));
     }
 
+    toggleWordModal = () => {
+        this.setState((prevState) => ({
+            wordToggle: !prevState.wordToggle
+        }));
+    }
+
     render() {
         const { lives, gameState, wrongGuesses, toggle, win } = this.state;
         const { difficulty, user } = this.props;
  
         return (
-            <div className="game-container" tabIndex="0" onKeyDown={this.handleInput}>
+            <div className="game-container" tabIndex="0">
                 <Game 
                     lives={lives} 
                     gameState={gameState} 
@@ -190,6 +217,11 @@ class GameContainer extends Component {
                     win={win} 
                     restart={this.restartGame} 
                 />
+                <WordModal
+                    toggleWordModal={this.toggleWordModal}
+                    wordToggle={this.state.wordToggle}
+                    setWord={this.setWord}
+                />
             </div>
         );
     }
@@ -203,4 +235,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { fetchWord, findUser, updateScore })(GameContainer);
+export default connect(mapStateToProps, { fetchWord, setWord, findUser, updateScore })(GameContainer);

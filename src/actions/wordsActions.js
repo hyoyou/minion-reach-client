@@ -24,3 +24,10 @@ export const setDifficulty = (difficulty) => {
         payload: difficulty
     }
 }
+
+export const setWord = (word) => {
+    return {
+        type: types.SET_WORD,
+        payload: word
+    }
+}
