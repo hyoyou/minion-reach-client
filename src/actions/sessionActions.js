@@ -1,6 +1,8 @@
 import * as types from './actionTypes';
 import { loadError, clearError } from './errorActions';
 
+const API_URL = 'https://minion-reach-server.herokuapp.com';
+
 const loadUserSuccess = (user) => {
     return {
         type: types.LOAD_USER_SUCCESS,
@@ -17,7 +19,7 @@ const updateUserSuccess = (user) => {
 
 export const loginUser = (credentials) => {
     return dispatch => {
-        return fetch('https://minion-reach-server.herokuapp.com/api/login', {
+        return fetch(`${API_URL}/api/login`, {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json'
@@ -40,7 +42,7 @@ export const loginUser = (credentials) => {
 
 export const signupUser = (userInfo) => {
     return dispatch => {
-        return fetch('https://minion-reach-server.herokuapp.com/api/signup', {
+        return fetch(`${API_URL}/api/signup`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -64,7 +66,7 @@ export const signupUser = (userInfo) => {
 // Send JWT token to server to find the correct user and dispatch loadUser with data returned
 export const findUser = (token) => {
     return dispatch => {
-        return fetch('https://minion-reach-server.herokuapp.com/api/find', {
+        return fetch(`${API_URL}/api/find`, {
             method: 'POST',
             headers: {
             'Authorization': token,
@@ -83,7 +85,7 @@ export const findUser = (token) => {
 // When server sends back information about the user, dispatch action to set user data in reducer
 export const loadUser = (userId) => {
     return dispatch => {
-        return fetch(`https://minion-reach-server.herokuapp.com/api/users/${userId}`, {
+        return fetch(`${API_URL}/api/users/${userId}`, {
             method: 'GET'
         })
         .then(response => response.json())
@@ -96,7 +98,7 @@ export const loadUser = (userId) => {
 
 export const updateScore = (score, user) => {
     return dispatch => {
-        return fetch(`https://minion-reach-server.herokuapp.com/api/users/${user.id}`, {
+        return fetch(`${API_URL}/api/users/${user.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
