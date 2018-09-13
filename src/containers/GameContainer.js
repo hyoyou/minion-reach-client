@@ -72,10 +72,11 @@ class GameContainer extends Component {
         } 
     }
 
-    setWord = word => {
+    setWord = async word => {
         const { setWord } = this.props;
 
-        setWord(word).then(() => this.startGame());
+        await setWord(word)
+        this.startGame();
     }
 
     // Take in user's guess and check against secret word

@@ -14,7 +14,8 @@ export default class WordModal extends Component {
     handleSubmit = event => {
         event.preventDefault();
 
-        this.props.setWord(this.state.input);
+        this.props.setWord(this.state.input.toUpperCase());
+        this.props.toggleWordModal();
     }
 
     render() {
@@ -29,12 +30,13 @@ export default class WordModal extends Component {
                     <a className="btn-close" onClick={(event) => toggleWordModal(event)}>X</a>
         
                     <p>Player 1, Enter the secret word:</p>
-
                     <form onSubmit={this.handleSubmit}>
                         <input type="text" name="secretWord" value={this.state.input} onChange={this.handleInput} />
-                        <input type="submit" value="Submit" />
+                        <button className="btn btn-primary" type="submit" value="Submit">Submit</button>
                     </form>
 
+                    <p>Player 2, No peeking!!</p>
+                    <img src="https://s3.amazonaws.com/minionreach/Minion_No_See.png" alt="No peeking" />
                 </div>
             </div>
         );
