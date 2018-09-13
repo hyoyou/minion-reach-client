@@ -15,6 +15,11 @@ export default function wordsReducer(state = {
                 ...state,
                 difficulty: action.payload
             }
+        case types.SET_WORD:
+            return {
+                ...state,
+                word: action.payload
+        }
         default:
             return state;
     }
