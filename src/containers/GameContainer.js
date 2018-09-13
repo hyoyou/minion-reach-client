@@ -61,7 +61,13 @@ class GameContainer extends Component {
             win: false,
         });
 
-        fetchWord(difficulty).then(() => this.startGame());
+        if (difficulty === "multiplayer") {
+            this.setState((prevState) => ({
+                wordToggle: !prevState.wordToggle
+            }));
+        } else {
+            fetchWord(difficulty).then(() =>  this.startGame());
+        }
     }
 
     // When input is via keyboard, validate that it is an A-Z letter, capitalize, and send to checkGuess()
