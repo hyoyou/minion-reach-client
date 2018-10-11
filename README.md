@@ -25,8 +25,6 @@ In order to address these concerns, I had to implement a few conditionals and lo
 
 Once I had the game logic working, I wanted to include a leaderboard for users who chose to sign up and log in, which required me to build a database and model in the server side. I originally thought that I would need two separate models, a User and a Leaderboard model, but since there is only one leaderboard that shows the top 10 users of the game, I wrote a method in the users controller that returns the top 10 users sorted by score.
 
-I really enjoyed the process of creating this application and hope that users are able to enjoy it as much as I do. Thank you to the REACH team for assigning such an awesome coding challenge!
-
 ## Features
 * 4 Levels of Difficulty (Easy, Normal, Hard, Bananas)
 * Leaderboard Displaying Top 10 Players (Only users who are logged in will be able to save scores)
